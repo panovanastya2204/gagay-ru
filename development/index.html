@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="format-detection" content="telephone=no">
+<title>Анастасия Гагай – маркетинг и ИИ для застройщиков</title>
+<meta name="description" content="Генплан и визуализации вашего ЖК в одной 3D-модели, видео-экскурсии по планировкам с ремонтом. Инженер-строитель, маркетинг и ИИ для застройщиков.">
+<meta property="og:title" content="Анастасия Гагай – маркетинг и ИИ для застройщиков">
+<meta property="og:description" content="Генплан и визуализации ЖК в одной 3D-модели. Видео-экскурсии по планировкам. За неделю вместо двух месяцев.">
+<meta property="og:image" content="img/photo.jpg">
+<style>
+:root{
+  --bg:#FFFFFF;
+  --soft:#F5F5F5;
+  --card:#FAFAFA;
+  --line:#EBEBEB;
+  --ink:#141414;
+  --text:#3D3D3D;
+  --muted:#737373;
+  --navy:#1B2B4B;
+  --navy-2:#24385F;
+  --glow:27,43,75;
+  --r:20px;
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 4px 14px rgba(0,0,0,.05);
+  color-scheme:light;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--text);
+  font:13px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",Roboto,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:480px;margin:0 auto;padding:calc(22px + env(safe-area-inset-top)) 16px calc(36px + env(safe-area-inset-bottom))}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+h1,h2,h3,p{margin:0}
+
+/* шапка */
+.head{display:flex;gap:16px;align-items:flex-start}
+.ava{flex:none;width:96px;height:96px;border-radius:50%;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,.16)}
+.head h1{font-size:16px;line-height:24px;font-weight:600;letter-spacing:-.4px;color:var(--ink)}
+.head h1 span{font-weight:400;color:var(--muted)}
+.role{font-size:12px;line-height:19.5px;font-weight:600;color:var(--ink)}
+.head ul{list-style:none;margin:2px 0 0;padding:0;font-size:12px;line-height:19.5px;color:var(--ink)}
+.head li{display:flex;gap:6px;align-items:flex-start}
+.head li+li{margin-top:3px}
+.head li svg{flex:none;width:14px;height:14px;margin-top:2.5px;stroke:var(--navy);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.cal{width:17px;height:17px;margin-right:8px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+.offer{margin-top:18px;font-size:14px;line-height:1.5;font-weight:400;color:var(--text)}
+.offer b{font-weight:600;color:var(--ink)}
+.offer mark{display:table;margin-top:8px;padding:3px 10px;border-radius:8px;background:var(--navy);color:#fff;font-weight:600}
+
+/* кнопки */
+.msgs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.msg{display:flex;align-items:center;justify-content:center;gap:7px;height:42px;border-radius:14px;
+  background:var(--card);border:1px solid var(--line);color:var(--ink);text-decoration:none;
+  font-size:12px;font-weight:500;box-shadow:var(--shadow);
+  transition:transform .12s,background .15s,box-shadow .15s;animation:rim 3.2s ease-in-out infinite}
+.msg:nth-child(2){animation-delay:.35s}.msg:nth-child(3){animation-delay:.7s}
+.msg svg{width:16px;height:16px;flex:none;fill:var(--navy)}
+.msg:active{transform:scale(.97);background:var(--soft);box-shadow:0 0 0 3px rgba(var(--glow),.14)}
+@keyframes rim{0%,100%{border-color:var(--line);box-shadow:var(--shadow)}
+  50%{border-color:rgba(var(--glow),.38);box-shadow:0 0 0 3px rgba(var(--glow),.06),0 4px 14px rgba(var(--glow),.10)}}
+
+.cta{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;width:100%;height:50px;margin-top:8px;
+  border:0;border-radius:14px;background:var(--navy);color:#fff;text-decoration:none;
+  font-size:14px;font-weight:600;cursor:pointer;
+  animation:pulse 2.6s ease-in-out infinite;transition:transform .12s,background .15s}
+.cta:active{transform:scale(.98);background:var(--navy-2)}
+.cta::after{content:"";position:absolute;top:0;bottom:0;left:-40%;width:34%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent);transform:skewX(-18deg);
+  animation:shine 2.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(var(--glow),0),0 4px 12px rgba(var(--glow),.18)}
+  50%{box-shadow:0 0 0 5px rgba(var(--glow),.10),0 6px 22px rgba(var(--glow),.38)}}
+@keyframes shine{0%,55%{left:-40%}100%{left:120%}}
+
+/* секции */
+section{margin-top:28px;padding-top:28px;border-top:1px solid var(--line)}
+.eyebrow{font-size:11px;line-height:16px;font-weight:600;letter-spacing:.3px;text-transform:uppercase;color:var(--muted)}
+h2{margin-top:4px;font-size:17px;line-height:1.3;font-weight:600;letter-spacing:-.3px;color:var(--ink)}
+.lead{margin-top:6px;font-size:13px;color:var(--ink);font-weight:500}
+section p{margin-top:8px}
+section p a{color:var(--ink);text-underline-offset:3px}
+section p b{color:var(--ink);font-weight:600}
+.q{margin-top:10px;padding:10px 14px;background:var(--soft);border-radius:14px;color:var(--ink)}
+.q span{display:block}
+
+.cap{margin-top:18px;font-size:14px;line-height:17.5px;font-weight:500;color:var(--ink)}
+.hint{margin-top:3px !important;font-size:12px;color:var(--muted)}
+.lb3d{position:relative;width:100%;aspect-ratio:3/4;max-height:72svh;margin-top:10px;border-radius:22px;overflow:hidden;background:#cfe3ee;
+  border:1px solid var(--line);box-shadow:var(--shadow)}
+.lb3d iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.full{display:inline-block;margin-top:10px;font-size:12px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+
+.feats{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:8px}
+.feats li{display:flex;gap:12px;align-items:flex-start;padding:13px 16px;border-radius:var(--r);background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow)}
+.feats svg{flex:none;width:20px;height:20px;margin-top:1px;stroke:var(--navy);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.feats b{display:block;font-size:14px;line-height:17.5px;font-weight:500;color:var(--ink)}
+.feats span{display:block;margin-top:4px;font-size:12px;line-height:15px;color:var(--muted)}
+
+.get{margin-top:16px;padding:16px;border-radius:var(--r);background:var(--soft)}
+.get p{margin:0;font-size:14px;line-height:1.4}
+.get .cta{margin-top:12px}
+.get .alt{margin-top:10px;text-align:center;font-size:12px;color:var(--muted)}
+.speed{margin-top:28px;padding:16px 18px;border-radius:var(--r);background:var(--navy);color:rgba(255,255,255,.78)}
+.speed{display:flex;gap:14px;align-items:center}
+.speed>svg{flex:none;width:30px;height:30px;stroke:#fff;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;opacity:.9}
+.speed .row{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;color:#fff;font-weight:600;letter-spacing:-.3px}
+.speed s{font-size:16px;color:rgba(255,255,255,.55);font-weight:600}
+.speed i{font-style:normal;font-size:16px;color:rgba(255,255,255,.55)}
+.speed strong{font-size:16px;font-weight:600}
+.speed p{margin-top:6px;font-size:12px}
+.speed+section{border-top:0;padding-top:0}
+
+.vid{margin-top:14px;border-radius:var(--r);overflow:hidden;background:#000;border:1px solid var(--line);box-shadow:var(--shadow)}
+.vid video{width:100%;aspect-ratio:16/9;object-fit:cover}
+.note{margin-top:8px !important;font-size:12px;color:var(--muted)}
+
+.docs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.doc{padding:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card);text-align:left;cursor:pointer;box-shadow:var(--shadow)}
+.doc img{width:100%;height:100px;object-fit:cover;object-position:top;background:#fff;border-bottom:1px solid var(--line)}
+.doc span{display:block;padding:8px 12px 10px;font-size:12px;line-height:15px;color:var(--muted)}
+
+/* кейсы */
+.cases{display:grid;gap:10px;margin-top:14px}
+.case{display:flex;align-items:center;gap:12px;width:100%;padding:16px;border-radius:var(--r);background:var(--card);
+  border:1px solid var(--line);box-shadow:var(--shadow);text-align:left;cursor:pointer;transition:transform .12s,background .15s}
+.case:active{transform:scale(.985);background:var(--soft)}
+.ic{flex:none;width:40px;height:40px;border-radius:12px;background:#EEF1F6;display:grid;place-items:center}
+.ic svg{width:20px;height:20px;stroke:var(--navy);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.case .t{flex:1;min-width:0}
+.case b{display:block;font-size:14px;line-height:17.5px;font-weight:500;color:var(--ink)}
+.case .t span{display:block;margin-top:4px;font-size:12px;line-height:15px;color:var(--muted)}
+.chev{flex:none;width:16px;height:16px;stroke:var(--muted);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* встреча */
+.meet{margin-top:28px;padding:20px 18px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow)}
+.meet h2{margin-top:0}
+.btns{display:grid;gap:8px;margin-top:16px}
+.btns .msg{height:46px;font-size:13px;background:#fff}
+.btns .msg.main{background:var(--navy);border-color:transparent;color:#fff;font-weight:600;animation:pulse 2.6s ease-in-out infinite}
+.btns .msg.main svg{fill:#fff}
+.tel{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px;padding:8px 8px 8px 16px;border-radius:14px;background:var(--soft)}
+.tel a{font-size:14px;font-weight:600;color:var(--ink);text-decoration:none}
+.tel button{height:32px;padding:0 12px;border-radius:10px;border:1px solid var(--line);background:#fff;font-size:12px;font-weight:500;cursor:pointer}
+footer{margin-top:24px;text-align:center;font-size:10px;color:rgba(115,115,115,.7)}
+
+/* закреплённая кнопка */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:14px 16px calc(10px + env(safe-area-inset-bottom));
+  background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.96) 40%);
+  transform:translateY(110%);transition:transform .3s ease;pointer-events:none}
+.dock.on{transform:none;pointer-events:auto}
+.dock .cta{max-width:448px;margin:0 auto;height:48px}
+
+/* шторка */
+.scrim{position:fixed;inset:0;z-index:30;background:rgba(20,20,20,.45);opacity:0;pointer-events:none;transition:opacity .25s}
+.scrim.on{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:31;max-width:480px;margin:0 auto;max-height:90svh;display:flex;flex-direction:column;
+  background:#fff;border-radius:24px 24px 0 0;
+  transform:translateY(105%);transition:transform .32s cubic-bezier(.2,.8,.2,1);box-shadow:0 -10px 40px rgba(0,0,0,.18)}
+.sheet.on{transform:none}
+.grab{flex:none;height:26px;display:flex;align-items:center;justify-content:center}
+.grab::before{content:"";width:36px;height:4px;border-radius:2px;background:#DADADA}
+.x{position:absolute;top:12px;right:12px;width:30px;height:30px;border-radius:50%;border:0;background:var(--soft);color:var(--muted);font-size:18px;line-height:1;cursor:pointer;z-index:2}
+.sbody{overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:4px 18px calc(28px + env(safe-area-inset-bottom))}
+.sbody h3{padding-right:36px;font-size:17px;line-height:1.3;font-weight:600;letter-spacing:-.3px;color:var(--ink)}
+.sbody .sub{margin-top:4px;font-size:12px;color:var(--muted)}
+.sbody h4{margin:18px 0 0;font-size:11px;font-weight:600;letter-spacing:.3px;text-transform:uppercase;color:var(--muted)}
+.sbody p{margin-top:6px}
+.sbody .you{margin-top:18px;padding:14px 16px;border-radius:16px;background:var(--navy);color:#fff}
+.sbody .you h4{margin:0;color:rgba(255,255,255,.6)}
+.sbody .you p{color:#fff}
+.sbody .pic,.sbody video{width:100%;margin-top:14px;border-radius:14px;border:1px solid var(--line);background:#fff;cursor:zoom-in}
+.sbody video{cursor:default;background:#000}
+.ba{display:grid;gap:8px;margin-top:14px}
+.ba figure{position:relative;margin:0}
+.ba img{width:100%;border-radius:14px;border:1px solid var(--line);cursor:zoom-in}
+.ba figcaption{position:absolute;top:8px;left:8px;padding:2px 8px;border-radius:8px;background:rgba(20,20,20,.8);font-size:11px;font-weight:500;color:#fff}
+.strip{display:flex;gap:8px;margin:14px -18px 0;padding:0 18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.strip img{flex:none;width:58%;border-radius:12px;border:1px solid var(--line);scroll-snap-align:center;cursor:zoom-in}
+.out{display:inline-block;margin-top:14px;font-size:12px;font-weight:500;color:var(--ink);text-underline-offset:3px}
+
+.lbx{position:fixed;inset:0;z-index:40;background:rgba(20,20,20,.94);display:flex;align-items:center;justify-content:center;padding:12px;overflow:auto}
+.lbx img{max-width:100%;max-height:100%;border-radius:8px}
+.lbx[hidden]{display:none}
+
+@media (max-width:350px){.ava{width:80px;height:80px}.head{gap:12px}.msg{gap:5px}}
+@media (prefers-reduced-motion:reduce){*,*::after{animation:none !important;transition:none !important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="head">
+    <img class="ava" src="img/photo.jpg" alt="Анастасия Гагай" width="96" height="96">
+    <div>
+      <h1>Анастасия Гагай <span>(Панова)</span></h1>
+      <p class="role">Маркетинг и ИИ для застройщиков</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24"><path d="M3 18h18M5 18v-3a7 7 0 0 1 14 0v3M10 8.3V5h4v3.3"/></svg>Инженер-строитель, два красных диплома ДГТУ (РГСУ)</li>
+        <li><svg viewBox="0 0 24 24"><path d="m3 17 6-6 4 4 8-8M15 7h6v6"/></svg>Сокращаю расходы через ИИ, увеличиваю доход через маркетинг</li>
+      </ul>
+    </div>
+  </header>
+
+  <p class="offer">Генплан и визуализации вашего ЖК <b>в одной 3D‑модели</b> и <b>видео‑экскурсии по планировкам с ремонтом</b>. <mark>За неделю вместо двух месяцев</mark></p>
+
+  <nav class="msgs" aria-label="Мессенджеры">
+    <a class="msg" href="https://wa.me/79081787435" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm-3.2 5.2c.2 0 .4 0 .6.4l.8 1.9c.1.2.1.4 0 .5l-.6.9c-.1.1-.2.3-.1.5.2.3.7 1.2 1.5 1.9 1.1 1 2 1.3 2.2 1.4.2.1.4.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l1.800.9c.3.1.4.2.5.3 0 .1 0 .6-.1 1.2-.2.6-1.2 1.1-1.6 1.1-.4.1-.9.2-3-.6-2.5-1-4.1-3.5-4.2-3.700-.1-.2-1-1.3-1-2.5s.6-1.700.8-2c.2-.2.4-.3.6-.3z"/></svg>WhatsApp</a>
+    <a class="msg" href="https://t.me/npanova" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21.9 4.3 18.7 19.5c-.2 1-.9 1.3-1.700.8l-4.800-3.500-2.300 2.200c-.3.3-.5.5-1 .5l.3-4.900 8.900-8c.4-.3-.1-.5-.6-.2L6.500 13.300l-4.700-1.500c-1-.3-1-1 .2-1.500L20.500 3.200c.9-.3 1.600.2 1.400 1.100z"/></svg>Telegram</a>
+    <a class="msg" href="https://max.ru/u/f9LHodD0cOJ0yGcqd8OXppnGa2DKfDjoJzq1MigRNQSqaNwzT34vvEZE3TA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="6"/><path d="M7 16V8.5l5 5 5-5V16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>MAX</a>
+  </nav>
+  <a class="cta" id="ctaTop" href="#meet"><svg class="cal" viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg>Получить 3D-модель моего ЖК</a>
+
+  <section id="genplan">
+    <p class="eyebrow">Интерактивный нейрогенплан</p>
+    <h2>Генплан и визуализации вашего ЖК в одной 3D-модели</h2>
+    <p>На встрече вы показываете генплан, потом картинки, а клиент не может их сопоставить:</p>
+    <p class="q"><span>– Где это здание?</span><span>– Как сюда пройти?</span><span>– Видно ли отсюда парк?</span><span>– Какой вид из квартиры?</span></p>
+    <p>Я собираю генплан и визуализации в одно.</p>
+
+    <p class="cap">Как это выглядит: 3D-генплан живого ЖК</p>
+    <p class="hint">Можно покрутить, нажать на дом и подвинуть солнце</p>
+    <div class="lb3d"><iframe src="https://gagay.ru/levoberezhye/" title="3D-генплан ЖК «Левобережье»" loading="lazy" allow="fullscreen" allowfullscreen></iframe></div>
+    <a class="full" href="https://gagay.ru/levoberezhye/" target="_blank" rel="noopener">Открыть на весь экран</a>
+
+    <ul class="feats">
+      <li><svg viewBox="0 0 24 24"><path d="M3 12c0-3 4-5 9-5s9 2 9 5-4 5-9 5"/><path d="m9 14 3 3-3 3"/></svg>
+        <div><b>Облёт территории и заезд через въезд</b><span>Клиент видит путь до своего дома</span></div></li>
+      <li><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h3M13 7h3M8 11h3M13 11h3M10 21v-5h4v5"/></svg>
+        <div><b>Карточка каждого здания</b><span>Описание, рендеры, внутрь можно добавить планировки</span></div></li>
+      <li><svg viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/></svg>
+        <div><b>Сценарии одним кликом</b><span>Очереди, благоустройство, коммерция</span></div></li>
+      <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+        <div><b>Солнце по времени суток</b><span>Клиент сам находит самую светлую квартиру</span></div></li>
+      <li><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>
+        <div><b>Работает по ссылке</b><span>Ничего не нужно устанавливать</span></div></li>
+    </ul>
+
+    <div class="get">
+      <p><b>Напишите мне, чтобы получить первый вариант 3D-модели конкретно вашего ЖК.</b></p>
+      <a class="cta" href="https://wa.me/79081787435?text=%D0%90%D0%BD%D0%B0%D1%81%D1%82%D0%B0%D1%81%D0%B8%D1%8F%2C%20%D0%B4%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C.%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D0%BF%D0%B5%D1%80%D0%B2%D1%8B%D0%B9%20%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%203D-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%20%D0%BD%D0%B0%D1%88%D0%B5%D0%B3%D0%BE%20%D0%96%D0%9A." target="_blank" rel="noopener">Получить 3D-модель моего ЖК</a>
+      <p class="alt">или в <a href="https://t.me/npanova" target="_blank" rel="noopener">Telegram</a> · <a href="https://max.ru/u/f9LHodD0cOJ0yGcqd8OXppnGa2DKfDjoJzq1MigRNQSqaNwzT34vvEZE3TA" target="_blank" rel="noopener">MAX</a></p>
+    </div>
+  </section>
+
+  <div class="speed">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg>
+    <div><div class="row"><s>2 месяца</s><i>→</i><strong>1 неделя</strong></div>
+    <p>Что другие обещают за 2 месяца, я сделаю за неделю.</p></div>
+  </div>
+
+  <section id="video">
+    <p class="eyebrow">Видео с ремонтом</p>
+    <h2>Видео-экскурсии по планировкам</h2>
+    <p>Большинство квартир сдаются со стяжкой. Покупатель видит только планировку и бетон, а представить, как тут будет жить его семья, получается не у всех.</p>
+    <p>Я делаю видео-экскурсии по всем планировкам уже с ремонтом. <b>Менеджер отправляет видео после показа, и человек показывает его дома тем, кто в офис не приезжал.</b></p>
+    <div class="vid"><video src="img/riviera-demo.mp4" poster="img/riviera-poster.jpg" controls playsinline preload="none"></video></div>
+    <p class="note">Пример ролика</p>
+  </section>
+
+  <section id="edu">
+    <p class="eyebrow">Образование</p>
+    <h2>Я инженер-строитель</h2>
+    <p>В 2019 году окончила ДГТУ (бывший РГСУ) по промышленному и гражданскому строительству, в 2021-м – магистратуру. <b>Оба диплома красные.</b> Участвовала во всероссийской олимпиаде по сопромату.</p>
+    <p>Когда речь идёт о шумоизоляции или инженерных сетях, мне не нужен переводчик. Я понимаю, что и как вы строите, и могу рассказать об этом покупателю так, чтобы он видел, за что платит.</p>
+    <div class="docs">
+      <button class="doc" type="button" data-zoom="img/dip-bak.jpg"><img src="img/dip-bak.jpg" alt="" loading="lazy"><span>Диплом бакалавра с отличием</span></button>
+      <button class="doc" type="button" data-zoom="img/dip-mag.jpg"><img src="img/dip-mag.jpg" alt="" loading="lazy"><span>Диплом магистра с отличием</span></button>
+      <button class="doc" type="button" data-zoom="img/olymp-final.jpg"><img src="img/olymp-final.jpg" alt="" loading="lazy"><span>Финал всероссийской олимпиады по сопромату, 2017</span></button>
+      <button class="doc" type="button" data-zoom="img/olymp-rostov.jpg"><img src="img/olymp-rostov.jpg" alt="" loading="lazy"><span>2 место, городской этап, Ростов-на-Дону, 2017</span></button>
+    </div>
+  </section>
+
+  <section id="cases">
+    <p class="eyebrow">Кейсы</p>
+    <h2>Что я уже сделала с ИИ</h2>
+    <p>Я генеральный директор онлайн-школы PRO.FINANSY ДЕТИ (<a href="https://www.rusprofile.ru/id/1217800094225" target="_blank" rel="noopener">выручка 87 млн ₽ за 2025 год</a>). Всё это работает в моей компании и переносится в отдел продаж и маркетинг застройщика.</p>
+    <div class="cases" id="caseList"></div>
+  </section>
+
+  <section id="meet" class="meet">
+    <h2>Встретимся?</h2>
+    <p><b>Напишите мне – я сделаю пример 3D-модели вашего ЖК и покажу его на встрече.</b> Это ни к чему вас не обязывает.</p>
+    <div class="btns">
+      <a class="msg main" href="https://wa.me/79081787435?text=%D0%90%D0%BD%D0%B0%D1%81%D1%82%D0%B0%D1%81%D0%B8%D1%8F%2C%20%D0%B4%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C.%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D0%BF%D0%B5%D1%80%D0%B2%D1%8B%D0%B9%20%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%203D-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%20%D0%BD%D0%B0%D1%88%D0%B5%D0%B3%D0%BE%20%D0%96%D0%9A." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm-3.2 5.2c.2 0 .4 0 .6.4l.8 1.9c.1.2.1.4 0 .5l-.6.9c-.1.1-.2.3-.1.5.2.3.7 1.2 1.5 1.9 1.1 1 2 1.3 2.2 1.4.2.1.4.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l1.800.9c.3.1.4.2.5.3 0 .1 0 .6-.1 1.2-.2.6-1.2 1.1-1.6 1.1-.4.1-.9.2-3-.6-2.5-1-4.1-3.5-4.2-3.700-.1-.2-1-1.3-1-2.5s.6-1.700.8-2c.2-.2.4-.3.6-.3z"/></svg>Написать в WhatsApp</a>
+      <a class="msg" href="https://t.me/npanova" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21.9 4.3 18.7 19.5c-.2 1-.9 1.3-1.700.8l-4.800-3.500-2.300 2.200c-.3.3-.5.5-1 .5l.3-4.900 8.900-8c.4-.3-.1-.5-.6-.2L6.500 13.300l-4.700-1.500c-1-.3-1-1 .2-1.500L20.500 3.200c.9-.3 1.600.2 1.400 1.100z"/></svg>Написать в Telegram</a>
+      <a class="msg" href="https://max.ru/u/f9LHodD0cOJ0yGcqd8OXppnGa2DKfDjoJzq1MigRNQSqaNwzT34vvEZE3TA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="6"/><path d="M7 16V8.5l5 5 5-5V16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Написать в MAX</a>
+    </div>
+    <div class="tel"><a href="tel:+79081787435">+7 908 178-74-35</a><button type="button" id="copy">Скопировать</button></div>
+  </section>
+
+  <footer>Анастасия Гагай · Ростов-на-Дону</footer>
+</div>
+
+<div class="dock" id="dock"><a class="cta" href="#meet"><svg class="cal" viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg>Получить 3D-модель моего ЖК</a></div>
+
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" aria-hidden="true">
+  <div class="grab"></div>
+  <button class="x" id="sheetX" type="button" aria-label="Закрыть">×</button>
+  <div class="sbody" id="sheetBody"></div>
+</div>
+<div class="lbx" id="lbx" hidden><img alt=""></div>
+
+<script>
+const ICONS={
+ calls:'<path d="M4 13a8 8 0 0 1 16 0"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 2-2 3-5 3"/>',
+ bot:'<path d="M5 5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-7l-4 3v-3H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/>',
+ code:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M10 13l-2 2 2 2M14 13l2 2-2 2"/>',
+ image:'<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.5"/><path d="m21 16-5-5-8 8"/>'
+};
+const CASES=[
+ {icon:'calls',title:'ИИ слушает каждый звонок отдела продаж',sub:'Руководитель видит, на каком этапе менеджеры теряют клиента',
+  task:['Руководитель отдела продаж не успевает слушать все звонки и читать все переписки. Об ошибках менеджера он узнаёт, когда клиент уже ушёл.'],
+  done:['Звонки и голосовые переводим в текст, и ИИ оценивает каждый диалог по нашим критериям – своим для каждого этапа воронки.',
+        'ИИ видит, закрылась ли сделка, на какую сумму и за сколько дней, и сопоставляет это с ходом разговора. Заодно проверяет регламент: например, предложил ли менеджер допродажу. Руководитель разбирает отчёты на планёрках.'],
+  you:'Каждый звонок и встреча в офисе продаж разбираются по вашим критериям: выявил ли менеджер потребность, рассказал ли про ипотеку и рассрочку, предложил ли паркинг и кладовую, назначил ли следующий шаг. Видно, где люди уходят «подумать» и не возвращаются.',
+  img:['img/dialogs.jpg']},
+ {icon:'bot',title:'ИИ-помощник для менеджеров',sub:'Отвечает на вопросы о продукте за секунды, новички быстрее выходят в работу',
+  task:['Информация о продукте разбросана по чатам, таблицам и головам сотрудников. Новичок неделями дёргает руководителя, а клиенту говорит: «Я уточню и перезвоню».'],
+  done:['Собрали бота, в котором лежит всё о продукте. Менеджер пишет вопрос обычными словами и сразу получает ответ. Новых сотрудников стало заметно проще вводить в работу.'],
+  you:'Планировки, ход строительства, ипотечные программы, рассрочка и акции, которые меняются каждый месяц, – в одном боте. Менеджер отвечает клиенту сразу.',
+  img:['img/bot.jpg']},
+ {icon:'code',title:'Сервис за 4 месяца вместо 50 млн ₽',sub:'Подрядчики оценили разработку в 50 млн, мы собрали сами с ИИ',
+  task:['Нужна была обучающая платформа: дети проходят курс, родители видят статистику. Программисты оценили ТЗ примерно в 50 млн рублей.'],
+  done:['Я научила команду делать сервисы с ИИ: код пишет ИИ, человек ставит задачи. Наш методолог, автор курса, за 4 месяца сама собрала платформу с кабинетами ребёнка и родителя.'],
+  you:'Сервисы, которые обычно заказывают у подрядчиков и ждут месяцами, собираются быстро и своими силами: 3D-генплан, подборщик квартир, калькулятор ипотеки, кабинет покупателя. 3D-модель на этой странице сделана так же.',
+  video:'img/lms.mp4',poster:'img/lms-poster.jpg',
+  link:{href:'https://xn--80apaiifh9b.xn--p1ai/',text:'Платформа работает и сейчас: финомика.рф'}},
+ {icon:'image',title:'800+ страниц иллюстраций за 3 месяца',sub:'Руками это больше года работы',
+  task:['Для курса понадобились 4 энциклопедии по 200+ страниц, и почти на каждой странице цветные иллюстрации. Руками это больше года работы.'],
+  done:['Дизайнеры сделали иллюстрации с ИИ и сверстали все четыре книги за 3 месяца.'],
+  you:'Визуальный контент для ЖК делается так же быстро: визуализации дома с разных ракурсов – за 1 неделю, интерьеры под каждую планировку, картинки для рекламы.',
+  ba:true,gallery:[1,2,3,4,5,6,7,8,9].map(n=>'img/book'+n+'.jpg')}
+];
+const $=s=>document.querySelector(s);
+function el(tag,attrs,html){const e=document.createElement(tag);for(const k in attrs||{})e.setAttribute(k,attrs[k]);if(html!=null)e.innerHTML=html;return e}
+const CHEV='<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>';
+
+CASES.forEach(c=>{
+  const b=el('button',{class:'case',type:'button'},
+    '<span class="ic"><svg viewBox="0 0 24 24">'+ICONS[c.icon]+'</svg></span><div class="t"><b>'+c.title+'</b><span>'+c.sub+'</span></div>'+CHEV);
+  b.addEventListener('click',()=>openSheet(c,b));
+  $('#caseList').appendChild(b);
+});
+
+// шторка
+const sheet=$('#sheet'),scrim=$('#scrim'),body=$('#sheetBody');let lastFocus=null;
+function openSheet(c,from){
+  lastFocus=from;body.innerHTML='';
+  body.appendChild(el('h3',{id:'sheetTitle'},c.title));
+  body.appendChild(el('p',{class:'sub'},c.sub));
+  body.appendChild(el('h4',{},'Задача'));c.task.forEach(p=>body.appendChild(el('p',{},p)));
+  body.appendChild(el('h4',{},'Что сделали'));c.done.forEach(p=>body.appendChild(el('p',{},p)));
+  if(c.video){const v=el('video',{src:c.video,poster:c.poster,muted:'',loop:'',playsinline:'',autoplay:''});v.muted=true;body.appendChild(v);v.play().catch(()=>{})}
+  if(c.img)c.img.forEach(s=>body.appendChild(el('img',{class:'pic',src:s,alt:c.title,'data-zoom':s})));
+  if(c.ba)body.appendChild(el('div',{class:'ba'},
+    '<figure><img src="img/ill-before.jpg" data-zoom="img/ill-before.jpg" alt="Страницы до ИИ"><figcaption>Было</figcaption></figure>'+
+    '<figure><img src="img/ill-after.jpg" data-zoom="img/ill-after.jpg" alt="Страницы с иллюстрациями, сделанными с ИИ"><figcaption>Стало</figcaption></figure>'));
+  if(c.gallery)body.appendChild(el('div',{class:'strip'},c.gallery.map(s=>'<img src="'+s+'" data-zoom="'+s+'" alt="Страница энциклопедии" loading="lazy">').join('')));
+  body.appendChild(el('div',{class:'you'},'<h4>Что это даёт застройщику</h4><p>'+c.you+'</p>'));
+  if(c.link)body.appendChild(el('a',{class:'out',href:c.link.href,target:'_blank',rel:'noopener'},c.link.text));
+  sheet.style.transform='';sheet.classList.add('on');scrim.classList.add('on');sheet.setAttribute('aria-hidden','false');
+  body.scrollTop=0;document.body.style.overflow='hidden';$('#sheetX').focus({preventScroll:true});
+}
+function closeSheet(){
+  sheet.classList.remove('on');scrim.classList.remove('on');sheet.style.transform='';sheet.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';body.querySelectorAll('video').forEach(v=>v.pause());
+  if(lastFocus)lastFocus.focus({preventScroll:true});
+}
+scrim.addEventListener('click',closeSheet);$('#sheetX').addEventListener('click',closeSheet);
+// свайп вниз закрывает шторку
+(function(){let y0=null,dy=0;
+  sheet.addEventListener('touchstart',e=>{if(e.target.closest('.grab')||body.scrollTop<=0){y0=e.touches[0].clientY;dy=0;sheet.style.transition='none'}},{passive:true});
+  sheet.addEventListener('touchmove',e=>{if(y0==null)return;dy=e.touches[0].clientY-y0;
+    if(dy>0&&(e.target.closest('.grab')||body.scrollTop<=0))sheet.style.transform='translateY('+dy+'px)';else{sheet.style.transform='';dy=0}},{passive:true});
+  sheet.addEventListener('touchend',()=>{if(y0==null)return;sheet.style.transition='';if(dy>90)closeSheet();else sheet.style.transform='';y0=null});
+})();
+
+// просмотр картинок
+const lbx=$('#lbx');
+document.addEventListener('click',e=>{const z=e.target.closest('[data-zoom]');if(!z)return;lbx.firstElementChild.src=z.getAttribute('data-zoom');lbx.hidden=false});
+lbx.addEventListener('click',()=>{lbx.hidden=true});
+document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;if(!lbx.hidden)lbx.hidden=true;else if(sheet.classList.contains('on'))closeSheet()});
+
+// закреплённая кнопка: видна, пока не видно ни верхней кнопки, ни блока встречи
+(function(){const dock=$('#dock'),seen=new Map();
+  const io=new IntersectionObserver(es=>{es.forEach(x=>seen.set(x.target,x.isIntersecting));dock.classList.toggle('on',![...seen.values()].some(Boolean))});
+  io.observe($('#ctaTop'));io.observe($('#meet'));
+})();
+
+$('#copy').addEventListener('click',function(){
+  const done=()=>{this.textContent='Скопировано';setTimeout(()=>this.textContent='Скопировать',1600)};
+  if(navigator.clipboard)navigator.clipboard.writeText('+79081787435').then(done,done);else done();
+});
+</script>
+</body>
+</html>

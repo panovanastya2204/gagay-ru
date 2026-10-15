@@ -1,0 +1,15 @@
+{
+  "_comment": "Тексты карточек. Меняйте значения в кавычках и сохраняйте файл — модель подхватит их при обновлении страницы. Поле id не трогайте.",
+  "title": "ЖК «Ривьера»",
+  "subtitle": "Ростов-на-Дону · ГК «Альянс»",
+  "objects": [
+    {"id": "q1s1", "type": "home", "tone": "navy", "pin": "1 очередь · I этап", "title": "1 очередь, I этап", "subtitle": "Секции 3–7", "status": "", "due": "II кв. 2027", "floors": "8", "extra": {"Класс": "Бизнес", "Материал стен": "Кирпич"}},
+    {"id": "q1s2", "type": "home", "tone": "bronze", "pin": "1 очередь · II этап", "title": "1 очередь, II этап", "subtitle": "Секции 1, 2, 8", "status": "", "due": "I кв. 2028", "floors": "8", "extra": {"Класс": "Бизнес", "Материал стен": "Кирпич"}},
+    {"id": "q2s1", "type": "home", "tone": "navy", "pin": "2 очередь · I этап", "title": "2 очередь, I этап", "subtitle": "Секции 2–6", "status": "", "due": "III кв. 2028", "floors": "8", "extra": {"Класс": "Бизнес", "Материал стен": "Кирпич"}},
+    {"id": "q2s2", "type": "home", "tone": "bronze", "pin": "2 очередь · II этап", "title": "2 очередь, II этап", "subtitle": "Секции 1, 7, 8", "status": "", "due": "IV кв. 2028", "floors": "8", "extra": {"Класс": "Бизнес", "Материал стен": "Кирпич"}},
+    {"id": "blvd", "type": "infra", "icon": "walk", "title": "Прогулочный бульвар", "subtitle": "400 м", "status": "", "due": "", "floors": ""},
+    {"id": "emb", "type": "infra", "icon": "water", "title": "Набережная", "subtitle": "р. Темерник", "status": "", "due": "", "floors": ""},
+    {"id": "hotel", "type": "infra", "icon": "hotel", "title": "Парк-отель «Надежда»", "subtitle": "", "status": "", "due": "", "floors": ""},
+    {"id": "park", "type": "infra", "icon": "park", "title": "Парк «Надежда»", "subtitle": "", "status": "", "due": "", "floors": ""}
+  ]
+}

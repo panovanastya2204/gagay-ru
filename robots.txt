@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /alyans/
+Sitemap: https://gagay.ru/sitemap.xml

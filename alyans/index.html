@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Анастасия Гагай – маркетинг и ИИ для бизнеса. Кейсы, образование и запись на встречу.">
+<meta property="og:title" content="Анастасия Гагай">
+<meta property="og:description" content="Маркетинг и ИИ для бизнеса: сокращаю расходы через ИИ, увеличиваю доход через маркетинг.">
+<meta property="og:image" content="img/photo.jpg">
+<meta name="robots" content="noindex, nofollow">
+<style>[hidden]{display:none!important}</style>
+<title>Анастасия Гагай</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --navy:#2D3C55;
+  --navy-2:#3E5070;
+  --navy-tint:#E6EAF1;
+  --ink:#1D2432;
+  --muted:#667085;
+  --bg:#EFEEEA;
+  --card:#FFFFFF;
+  --line:#E2E0DA;
+  --shadow:0 1px 2px rgba(29,36,50,.05),0 6px 20px rgba(29,36,50,.06);
+  --r:22px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Onest",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:480px;margin:0 auto;padding-inline:16px;padding-block:20px 120px;display:flex;flex-direction:column;gap:14px}
+h1,h2,h3{margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:24px;line-height:1.2;font-weight:700;color:var(--navy)}
+h3{font-size:17px;line-height:1.3;font-weight:600}
+p{margin:0}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);padding:20px}
+.stack{display:flex;flex-direction:column;gap:12px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.section{display:flex;flex-direction:column;gap:12px;margin-top:14px}
+.section>.head{display:flex;flex-direction:column;gap:6px;padding-inline:4px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--navy);outline-offset:3px;border-radius:8px}
+
+/* header */
+.hero{display:flex;flex-direction:column;gap:16px}
+.hero-top{display:flex;gap:16px;align-items:center}
+.avatar{width:96px;height:96px;border-radius:50%;flex:none;object-fit:cover;box-shadow:0 0 0 4px var(--card),0 0 0 5px var(--line)}
+.hero h1{font-size:26px;line-height:1.15;font-weight:700;color:var(--navy)}
+.facts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.facts li{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.4}
+.facts svg{flex:none;width:20px;height:20px;margin-top:1px;stroke:var(--navy);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.facts a{text-decoration:underline;text-decoration-color:#B9C1CF;text-underline-offset:3px}
+.msgrs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.msgr{display:flex;align-items:center;justify-content:center;gap:6px;height:40px;border-radius:12px;background:var(--navy-tint);color:var(--navy);font-size:14px;font-weight:600;text-decoration:none}
+.msgr svg{width:16px;height:16px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;height:52px;border-radius:14px;background:var(--navy);color:#fff;font-weight:600;font-size:16px;text-decoration:none;border:0;cursor:pointer;width:100%}
+.btn:active{transform:translateY(1px)}
+
+/* numbers */
+.nums{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.num{background:var(--navy);color:#fff;border-radius:var(--r);padding:18px 16px;display:flex;flex-direction:column;gap:6px;text-decoration:none}
+.num:first-child{grid-column:1 / -1}
+.num b{font-size:30px;line-height:1;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.num span{font-size:14px;line-height:1.35;color:#C9D1DE}
+.num .link{font-size:12px;color:#9FB0C9;display:flex;align-items:center;gap:4px}
+
+/* gallery */
+.strip{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-20px;padding-inline:20px;padding-bottom:4px;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{margin:0;flex:none;width:150px;scroll-snap-align:start;display:flex;flex-direction:column;gap:6px}
+.strip img{width:150px;height:200px;object-fit:cover;border-radius:12px;border:1px solid var(--line);cursor:zoom-in;background:#f6f6f4}
+.strip figcaption{font-size:12px;line-height:1.35;color:var(--muted)}
+.stamp{display:flex;border:1px solid var(--navy);border-radius:10px;overflow:hidden;font-size:12px;color:var(--navy)}
+.stamp div{padding:6px 10px;display:flex;flex-direction:column;gap:1px}
+.stamp div+div{border-left:1px solid var(--navy)}
+.stamp small{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.stamp strong{font-weight:600}
+
+/* demo */
+.m3d{position:relative;width:100%;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:#dfe9ee}
+.m3d iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media (min-width:721px){.m3d{aspect-ratio:16/10}}
+.m3d-full{font-size:14px;font-weight:600;color:var(--navy);text-decoration:none;align-self:flex-start}
+.demo{display:flex;flex-direction:column;gap:8px}
+.demo-note{font-size:14px;line-height:1.45;color:var(--muted);background:#F4F3EF;border-radius:12px;padding:10px 12px}
+.demo-note b{color:var(--ink)}
+.demo video{width:100%;aspect-ratio:16/9;border-radius:14px;background:#1D2432;display:block}
+.gal{position:relative}
+.gal .arr{position:absolute;top:100px;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.95);box-shadow:0 2px 10px rgba(29,36,50,.22);color:var(--navy);font-size:24px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;transition:opacity .2s}
+.gal .arr.prev{left:-6px}.gal .arr.next{right:-6px}
+.gal .arr[disabled]{opacity:0;pointer-events:none}
+.gal-hint{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.strip figure.wide{width:287px}.strip figure.wide img{width:287px}
+.ba{display:flex;flex-direction:column;gap:8px}
+.ba figure{margin:0;position:relative}
+.ba img{border-radius:12px;border:1px solid var(--line);cursor:zoom-in}
+.ba .tag{position:absolute;left:8px;top:8px;background:rgba(29,36,50,.78);color:#fff;font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px}
+
+/* tabs + cases */
+.tabs{display:grid;grid-template-columns:1fr 1fr;background:#E3E2DD;border-radius:16px;padding:4px;gap:4px}
+.tab{border:0;background:transparent;border-radius:12px;min-height:44px;padding:6px 8px;line-height:1.2;font-size:14px;font-weight:500;color:var(--muted);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--card);color:var(--ink);font-weight:600;box-shadow:0 1px 3px rgba(29,36,50,.1)}
+.list{display:flex;flex-direction:column;gap:10px}
+.case{display:flex;align-items:center;gap:14px;background:var(--card);border-radius:18px;padding:12px;box-shadow:var(--shadow);border:0;text-align:left;cursor:pointer;width:100%}
+.thumb{flex:none;width:76px;height:76px;border-radius:14px;object-fit:cover;background:var(--navy-tint)}
+.thumb.fig{display:flex;align-items:center;justify-content:center;background:var(--navy);color:#fff;font-weight:700;font-size:19px;letter-spacing:-.02em;text-align:center;line-height:1.05;padding:6px}
+.thumb.ico{display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#3E5070,#2D3C55 60%,#243149);padding:14px}
+.thumb.ico svg{width:100%;height:100%;display:block}
+.case .t{flex:1;display:flex;flex-direction:column;gap:3px;min-width:0}
+.case .t b{font-size:16px;line-height:1.3;font-weight:600}
+.case .t span{font-size:14px;line-height:1.35;color:var(--muted)}
+.case .chev{flex:none;color:#A2AAB8;font-size:24px;line-height:1;padding-right:2px}
+
+/* ideas */
+.idea{display:flex;flex-direction:column;gap:8px}
+.chip{align-self:flex-start;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px}
+.chip.inc{background:var(--navy);color:#fff}
+.chip.exp{background:var(--navy-tint);color:var(--navy)}
+
+/* quote shot */
+.shot{border-radius:14px;border:1px solid var(--line);cursor:zoom-in}
+.cap{font-size:13px;color:var(--muted)}
+
+/* meeting */
+.meet .msgrs{grid-template-columns:1fr}
+.meet .msgr{height:50px;font-size:16px;justify-content:flex-start;padding-inline:16px;background:var(--navy);color:#fff}
+.meet .msgr.alt{background:var(--navy-tint);color:var(--navy)}
+.phone{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--line);border-radius:14px;padding:10px 10px 10px 16px}
+.phone span{white-space:nowrap;font-weight:600;font-variant-numeric:tabular-nums;user-select:all}
+.copy{border:0;background:var(--navy-tint);color:var(--navy);border-radius:10px;height:36px;padding-inline:12px;font-size:14px;font-weight:600;cursor:pointer}
+.foot{text-align:center;font-size:12px;color:var(--muted);padding-top:8px}
+
+/* sticky cta */
+.sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:linear-gradient(to top,var(--bg) 70%,rgba(239,238,234,0));transform:translateY(110%);transition:transform .25s ease;z-index:20}
+.sticky.on{transform:none}
+.sticky .btn{max-width:448px;margin:0 auto;box-shadow:0 6px 18px rgba(45,60,85,.3)}
+
+/* sheet */
+.scrim{position:fixed;inset:0;background:rgba(20,26,38,.45);opacity:0;pointer-events:none;transition:opacity .2s;z-index:40}
+.scrim.on{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:0;right:0;bottom:0;max-width:480px;margin:0 auto;max-height:90vh;background:var(--card);border-radius:24px 24px 0 0;z-index:41;transform:translateY(105%);transition:transform .28s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}
+.sheet:not(.on){visibility:hidden;transition:transform .28s cubic-bezier(.2,.8,.2,1),visibility 0s .28s}
+.sheet.on{transform:none}
+.grab{padding:10px 0 4px;display:flex;justify-content:center;touch-action:none;cursor:grab}
+.grab i{width:40px;height:5px;border-radius:3px;background:#D5D3CD}
+.sheet-x{position:absolute;right:12px;top:10px;width:36px;height:36px;border-radius:50%;border:0;background:#F0EFEB;font-size:20px;line-height:1;cursor:pointer;color:var(--muted)}
+.sheet-body{overflow-y:auto;padding:8px 20px calc(28px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:14px;overscroll-behavior:contain}
+.sheet-body h3{font-size:21px;color:var(--navy);padding-right:36px}
+.sheet-body .sub{color:var(--muted);font-size:14px;margin-top:-8px}
+.sheet-body img.full{border-radius:14px;border:1px solid var(--line);cursor:zoom-in}
+.sheet-body video{width:100%;border-radius:14px;border:1px solid var(--line);background:#f4f4f2}
+.sheet-body .strip{margin-inline:-20px}
+.sheet-body a.out{color:var(--navy);font-weight:600}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(12,16,24,.94);z-index:60;display:flex;align-items:center;justify-content:center;padding:16px;cursor:zoom-out}
+.lb img{max-height:100%;max-width:100%;object-fit:contain;border-radius:8px}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+</head>
+<body>
+<main class="wrap">
+
+  <!-- 1. Шапка -->
+  <header class="card hero">
+    <div class="hero-top">
+      <img class="avatar" src="img/photo.jpg" alt="Анастасия Гагай" width="96" height="96">
+      <div class="stack" style="gap:4px">
+        <h1>Анастасия Гагай</h1>
+        <p class="cap">Маркетинг и ИИ для бизнеса</p>
+      </div>
+    </div>
+    <ul class="facts">
+      <li>
+        <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5M9 10h.01M15 10h.01"/></svg>
+        <span>Генеральный директор PRO.FINANSY ДЕТИ <a href="https://www.rusprofile.ru/id/1217800094225" target="_blank" rel="noopener">(ООО «Академия создания капитала»)</a></span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24"><path d="M4 16a8 8 0 0 1 16 0M2 16h20v3H2zM12 8V5M9 9l-1-3M15 9l1-3"/></svg>
+        <span>Инженер-строитель, два красных диплома ДГТУ (РГСУ)</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg>
+        <span>Сокращаю расходы через ИИ, увеличиваю доход через маркетинг</span>
+      </li>
+    </ul>
+    <div class="msgrs">
+      <a class="msgr" href="https://wa.me/79081787435" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+        WhatsApp</a>
+      <a class="msgr" href="https://t.me/npanova" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.6 13.2 1.9 11.7c-1-.3-1-1 .2-1.5L20.5 3c.9-.3 1.6.2 1.4 1.3z"/></svg>
+        Telegram</a>
+      <a class="msgr" href="https://max.ru/u/f9LHodD0cOJ0yGcqd8OXppnGa2DKfDjoJzq1MigRNQSqaNwzT34vvEZE3TA" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="8.5"/><path d="M8 15V9l4 4 4-4v6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        MAX</a>
+    </div>
+    <a class="btn" href="#meet" id="heroCta">Договориться о встрече</a>
+  </header>
+
+  <!-- 1а. 3D-модель «Ривьеры» -->
+  <section class="card stack">
+    <span class="eyebrow">Для «Ривьеры»</span>
+    <h2>3D-модель квартала</h2>
+    <p>Покрутите модель, приблизьте, нажмите на дом и посмотрите, как ложатся тени в разное время дня. Внутри есть короткая подсказка: она по шагам покажет, как пользоваться.</p>
+    <div class="m3d"><iframe src="riviera/" title="ЖК «Ривьера» – 3D-генплан" loading="lazy" allowfullscreen></iframe></div>
+    <a class="m3d-full" href="riviera/" target="_blank" rel="noopener">Открыть на весь экран ›</a>
+  </section>
+
+  <!-- 2. Как я здесь оказалась -->
+  <section class="card stack">
+    <p>Я пришла в «Ривьеру», смотрела квартиру. Разговорились с Никитой: он рассказывал про проект, я про свою работу. И в итоге попросила познакомить меня с вами.</p>
+    <p>Коротко обо мне. Четыре года я строила детское направление PRO.FINANSY. Начинали с одной настольной игры, а в 2025 году это уже отдельная компания с выручкой 87 млн рублей. Я в ней генеральный директор.</p>
+    <p>Почти всё, на что обычно нанимают подрядчиков и потом ждут месяцами, мы делали внутри небольшой командой и с ИИ. Ниже – что именно и в каких цифрах.</p>
+  </section>
+
+  <!-- 3. Цифры -->
+  <section class="nums" aria-label="Цифры">
+    <a class="num" href="https://www.rusprofile.ru/id/1217800094225" target="_blank" rel="noopener">
+      <b>87 млн ₽</b>
+      <span>выручка компании в 2025 году</span>
+      <span class="link">данные на Rusprofile ›</span>
+    </a>
+    <div class="num"><b>46 700</b><span>регистраций на продающее мероприятие</span></div>
+    <div class="num"><b>3 000+</b><span>клиентов за 2 года</span></div>
+  </section>
+
+  <!-- 3а. Инженер-строитель -->
+  <section class="card stack">
+    <span class="eyebrow">Образование</span>
+    <h2>Я инженер-строитель</h2>
+    <p>В 2019 году я окончила ДГТУ (бывший РГСУ) по промышленному и гражданскому строительству, а в 2021-м – магистратуру. Оба диплома <b>красные</b>.</p>
+    <p>Во время учёбы участвовала во <b>всероссийской олимпиаде по сопромату</b>. Кто его сдавал, тот знает, что это за предмет и как он развивает мышление.</p>
+    <p>Поэтому, когда речь идёт о шумоизоляции или инженерных сетях, мне не нужен переводчик. Я понимаю, что и как вы строите, и могу рассказать об этом покупателю так, чтобы он видел, за что платит.</p>
+    <div class="gal"><div class="strip">
+      <figure class="wide"><img src="img/dip-bak.jpg" alt="Диплом бакалавра с отличием" loading="lazy"><figcaption>Диплом бакалавра с отличием</figcaption></figure>
+      <figure class="wide"><img src="img/dip-mag.jpg" alt="Диплом магистра с отличием" loading="lazy"><figcaption>Диплом магистра с отличием</figcaption></figure>
+      <figure><img src="img/olymp-final.jpg" alt="Сертификат участника заключительного этапа всероссийской олимпиады по сопромату" loading="lazy"><figcaption>Заключительный этап всероссийской олимпиады по сопромату, 2017</figcaption></figure>
+      <figure><img src="img/olymp-rostov.jpg" alt="Диплом за 2 место в олимпиаде по сопромату, Ростов-на-Дону" loading="lazy"><figcaption>2 место, городской этап, Ростов-на-Дону, 2017</figcaption></figure>
+    </div></div>
+  </section>
+
+  <!-- 4. Демо -->
+  <section class="card stack">
+    <span class="eyebrow">Для «Ривьеры»</span>
+    <h2>Видео-экскурсии по планировкам</h2>
+    <p>В «Ривьере» квартиры сдаются со стяжкой. Покупатель до покупки видит только планировку и демонстрационную квартиру на 1 этаже в бетоне. Он должен сам представить, как тут будет жить его семья. Получается это далеко не у всех (я сама стояла и прикидывала).</p>
+    <p>Я предлагаю сделать видео-экскурсии по всем планировкам. Те же стены, окна, потолки 3 метра.</p>
+    <p>Менеджер отправляет видео после показа, и человек показывает его дома тем, кто в офис не приезжал.</p>
+    <div class="demo">
+      <p class="demo-note"><b>Пример ролика. Конфиденциально.</b> Это делалось 8 месяцев назад. Сейчас можно гораздо лучше и реалистичнее.</p>
+      <video src="img/riviera-demo.mp4" poster="img/riviera-poster.jpg" controls playsinline preload="metadata"></video>
+    </div>
+  </section>
+
+  <!-- 5. Кейсы -->
+  <section class="section" id="cases">
+    <div class="head"><h2>Что я делала</h2></div>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" id="tab-exp" aria-selected="true" aria-controls="list-exp">Сократила расходы</button>
+      <button class="tab" role="tab" id="tab-inc" aria-selected="false" aria-controls="list-inc">Увеличила доход</button>
+    </div>
+    <div class="list" id="list-exp" role="tabpanel" aria-labelledby="tab-exp"></div>
+    <div class="list" id="list-inc" role="tabpanel" aria-labelledby="tab-inc" hidden></div>
+  </section>
+
+  <!-- 6. Идеи -->
+  <section class="section">
+    <div class="head">
+      <h2>Что бы я обсудила с вами</h2>
+      <p class="cap" style="font-size:15px;color:var(--ink)">Пока я знаю «Альянс Групп» как, возможно, будущий покупатель и по сайту. Поэтому это гипотезы – на встрече я задам вопросы и скажу, что из этого у вас даст деньги, а что нет.</p>
+    </div>
+    <article class="card idea"><span class="chip inc">Доход</span><h3>Видео-экскурсии по всем планировкам</h3><p>Ролик по каждой планировке и 2–3 варианта интерьера под разные сценарии жизни: семья с детьми, квартира с террасой, с камином.</p></article>
+    <article class="card idea"><span class="chip inc">Доход</span><h3>Разбор переговоров в офисах продаж</h3><p>У вас три офиса продаж. Можно разбирать каждый звонок и встречу по вашим критериям и видеть, на каком этапе люди уходят «подумать» и не возвращаются.</p></article>
+    <article class="card idea"><span class="chip inc">Доход</span><h3>Догрев тех, кто был на показе</h3><p>Квартиру бизнес-класса с первого визита покупают редко. Человек уезжает подумать, и дальше всё решает, остаётесь ли вы у него перед глазами: ход стройки, новые планировки, условия ипотеки. Это собирается в автоматическую цепочку.</p></article>
+    <article class="card idea"><span class="chip exp">Расходы</span><h3>База знаний для менеджеров</h3><p>Планировки, ипотечные программы, рассрочка и акции, которые меняются каждый месяц, – в одном боте. Менеджер отвечает клиенту сразу, новичок выходит в работу быстрее.</p></article>
+    <article class="card idea"><span class="chip exp">Расходы</span><h3>ИИ для вашей команды</h3><p>Могу научить маркетинг и продажи работать с ИИ на ваших задачах: тексты, визуал, аналитика, отчёты. В PRO.FINANSY я так и делала – сначала пробовала сама, потом учила сотрудников и ставила им задачи.</p></article>
+  </section>
+
+  <!-- 7. Как я работаю -->
+  <section class="card stack" style="margin-top:14px">
+    <h2>Как я работаю</h2>
+    <p>Всё, что выше, сделала небольшая команда. Моя роль – смотреть, что появляется на рынке, пробовать самой и переносить в команду то, что реально экономит деньги или приносит их.</p>
+    <p>ИИ для меня сейчас примерно как Excel лет пятнадцать назад. Кто им пользуется, тот делает ту же работу быстрее, и разница быстро становится заметной.</p>
+    <img class="shot" src="img/olga.jpg" alt="Пост Ольги Гогаладзе о команде Финомики" loading="lazy">
+    <p class="cap">Ольга Гогаладзе, основатель PRO.FINANSY, – о нашей команде</p>
+  </section>
+
+  <!-- 9. Встреча -->
+  <section class="card stack meet" id="meet" style="margin-top:14px">
+    <h2>Встретимся?</h2>
+    <p>Мне хватит часа: я задам вопросы про ваши продажи и покажу изнутри, как устроены наши ИИ-инструменты. Могу приехать к вам в офис.</p>
+    <div class="msgrs">
+      <a class="msgr" href="https://wa.me/79081787435?text=%D0%90%D0%BD%D0%B0%D1%81%D1%82%D0%B0%D1%81%D0%B8%D1%8F%2C%20%D0%B4%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C.%20%D0%94%D0%B0%D0%B2%D0%B0%D0%B9%D1%82%D0%B5%20%D0%B2%D1%81%D1%82%D1%80%D0%B5%D1%82%D0%B8%D0%BC%D1%81%D1%8F." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+        Написать в WhatsApp</a>
+      <a class="msgr alt" href="https://t.me/npanova" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.6 13.2 1.9 11.7c-1-.3-1-1 .2-1.5L20.5 3c.9-.3 1.6.2 1.4 1.3z"/></svg>
+        Написать в Telegram</a>
+      <a class="msgr alt" href="https://max.ru/u/f9LHodD0cOJ0yGcqd8OXppnGa2DKfDjoJzq1MigRNQSqaNwzT34vvEZE3TA" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="18" height="18"><circle cx="12" cy="12" r="8.5"/><path d="M8 15V9l4 4 4-4v6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Написать в MAX</a>
+    </div>
+    <div class="phone"><span id="phoneTxt">+7 908 178-74-35</span><button class="copy" id="copyBtn" type="button">Скопировать</button></div>
+    <p>Если сейчас не время – напишите, вернёмся к разговору позже)</p>
+  </section>
+
+  <p class="foot">Анастасия Гагай · Ростов-на-Дону</p>
+</main>
+
+<div class="sticky" id="sticky"><a class="btn" href="#meet">Договориться о встрече</a></div>
+
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" aria-hidden="true">
+  <div class="grab" id="grab"><i></i></div>
+  <button class="sheet-x" id="sheetX" type="button" aria-label="Закрыть">×</button>
+  <div class="sheet-body" id="sheetBody"></div>
+</div>
+
+<script>
+const books=[1,2,3,4,5,6,7,8,9].map(n=>'img/book'+n+'.jpg');
+const CASES={
+exp:[
+ {thumb:'img/lms-poster.jpg',title:'Сделали обучающую платформу своими силами',sub:'Подрядчики оценили в 50 млн, мы собрали за 4 месяца с ИИ',
+  body:['Нам нужен был сервис, где дети проходят курс с заданиями, а родители видят статистику. Программисты оценили наше ТЗ примерно в 50 млн рублей. Плюс сценарист, который месяцами объяснял бы им, что мы хотим, – долго и с кучей ошибок.',
+        'Я к тому времени уже разбиралась в вайбкодинге (код пишет ИИ, человек ставит задачи) и учила этому команду. В итоге наш методолог, которая писала курс, за 4 месяца сама собрала платформу: кабинет ребёнка, кабинет родителя, статистика обучения и бесплатная часть с лид-магнитами, куда мы ведём рекламу.'],
+  video:'img/lms.mp4',poster:'img/lms-poster.jpg',
+  link:{href:'https://xn--80apaiifh9b.xn--p1ai/',text:'Платформа работает и сейчас – финомика.рф ›'}},
+ {thumb:'img/book4.jpg',title:'Иллюстрации для 4 книг с помощью ИИ',sub:'800+ страниц за 3 месяца вместо года',
+  body:['Для курса понадобились энциклопедии: 4 книги по 200+ страниц А4, и почти на каждой странице цветные иллюстрации. Руками это больше года работы. Дизайнеры делали иллюстрации с ИИ и сверстали все четыре книги за 3 месяца.',
+        'Визуализации всего дома с разных ракурсов можно сделать за 1 неделю.'],
+  ba:true,
+  gallery:books},
+ {icon:'dialogs',title:'ИИ проверяет работу менеджеров по продажам',sub:'Разбирает каждый звонок и переписку, руководитель видит ошибки',
+  body:['РОП физически не успевает слушать все звонки. Поэтому голосовые и диагностики мы переводим в текст, переписки берём как есть, и ИИ оценивает каждый диалог по критериям. На разных этапах воронки критерии свои.',
+        'ИИ видит, закрылась ли сделка, на какую сумму и за сколько дней, и сопоставляет это с тем, как шёл разговор. Заодно проверяет регламенты – например, предложил ли менеджер допродажу после основной покупки. Эту обратную связь РОП разбирает на планёрках.'],
+  img:['img/dialogs.jpg']},
+ {icon:'bot',title:'ИИ-помощник для новых сотрудников',sub:'Отвечает на вопросы о продукте за секунды, новички быстрее выходят в работу',
+  body:['Собрали бота, в котором лежит всё про продукт и продающее мероприятие. Менеджер пишет вопрос (какое расписание у курса, о чём третий урок) и сразу получает ответ. Искать по чатам или дёргать руководителя уже не нужно.',
+        'Новых менеджеров и преподавателей стало заметно проще вводить в работу.'],
+  img:['img/bot.jpg']},
+ {icon:'channels',title:'Выросли с 6 000 до 119 067 подписчиков',sub:'ИИ каждую неделю оценивает посты и подсказывает, что улучшить',
+  body:['У нас сетка из 6 крупных телеграм-каналов, в сумме 119 067 подписчиков. Когда я взяла их в работу, был 1 канал с 6 000 подписчиков.',
+        'Каждую неделю ИИ разбирает посты за прошлую неделю по 8 критериям, которые мы вывели сами, и сверяет их с охватами и регистрациями. Потом даёт рекомендации, что поправить. Всё сводится в дашборд в DataLens, так что решения по контенту мы принимаем по цифрам.'],
+  img:['img/channels.jpg']},
+ {thumb:'img/youtube.jpg',title:'Мультфильмы с ИИ приводят бесплатный трафик',sub:'До 33 000 просмотров на ролик без рекламного бюджета',
+  body:['Команда делает мультфильмы и сказки с помощью ИИ. На YouTube у роликов от 1 000 до 33 000 просмотров, ещё выкладываем на RuTube и VK Видео.',
+        'Для нас это отличный источник органического трафика: ролики сами приводят новую аудиторию, и за эти просмотры мы не платим за рекламу.'],
+  img:['img/youtube.jpg'],link:{href:'https://www.youtube.com/@pro.finansy_kids',text:'Канал на YouTube ›'}},
+ {icon:'training',title:'Обучение и инструкции для каждой должности',sub:'Уход сотрудника не останавливает работу',
+  body:['Когда из компании уходит сильный сотрудник, вместе с ним обычно уходят и знания. Я строила компанию так, чтобы этого не происходило. Для каждой роли есть своё обучение, а на все процессы – инструктивные письма: что делать, в каком порядке, где что лежит. Кстати, сайт для внутреннего обучения тоже создан с помощью ИИ.',
+        'Новый человек приходит и работает по готовой системе, ему не нужно собирать знания по крупицам у коллег. Для бизнеса это меньше потерь при смене людей и быстрый выход новичка на результат.'],
+  img:['img/training.jpg']}
+],
+inc:[
+ {thumb:'img/book1.jpg',title:'Первый продукт распродали за одну ночь',sub:'Настольная игра: 1 000 штук, от идеи до продажи 2 месяца',
+  body:['В 2022 году я пришла к собственнице с идеей детского направления по финансовой грамотности. Получила добро и собрала команду: сценарист/копирайтер, иллюстратор, дизайнер, менеджер по продажам.',
+        'Мы придумали игру «Финомика», напечатали тираж, настроили логистику, сделали сайт и запустили рассылку по базе и в канале собственницы. Весь тираж, 1 000 экземпляров, ушёл за одну ночь. От идеи до последней продажи прошло 2 месяца.',
+        'Потом из отдела выросла отдельная компания, а из одной игры – линейка: курс для трёх возрастов, энциклопедии, карточки и большая настольная игра «Мечтаполис».'],
+  img:['img/soldout.jpg','img/stories.jpg'],link:{href:'https://t.me/pro_finansy_kids/718',text:'Тот самый пост в канале ›'}},
+ {thumb:'img/reg-dash.jpg',title:'Марафон, на который пришли 46 700 человек',sub:'Им открыли продажи нового курса',
+  body:['Открытие продаж «Финомики» мы делали через марафон вместе с собственниками. Я собрала под него команду и отвечала за организацию. Зарегистрировались 46 700 человек.'],
+  img:['img/reg-dash.jpg']},
+ {icon:'revenue',title:'87 млн выручки в 2025 году',sub:'Собрала команду, процессы и систему продаж',
+  body:['С сентября 2024 года я генеральный директор ООО «Академия создания капитала». Собрала команду, выстроила процессы, аналитику и воронку продаж. В 2025 году компания заработала 87 млн рублей.',
+        'Воронку строили так, чтобы не выжигать базу постоянными продажами: лид-магнит → марафон → продажа → отдел продаж, и 1–2 экспертных мероприятия в месяц. Тем, кто уже купил, выстроили допродажи. У вас похожая механика есть с паркингом и кладовой, её можно усилить.'],
+  link:{href:'https://www.rusprofile.ru/id/1217800094225',text:'Данные компании на Rusprofile ›'}},
+ {icon:'fast',title:'Ускорила оплату маткапиталом в 4 раза',sub:'Деньги приходят за 2 недели вместо 2 месяцев',
+  body:['Продукт у нас недешёвый, и часть родителей просто не могла его купить. Я подключила оплату материнским капиталом, и пошёл новый поток клиентов.',
+        'Клиенты у нас по всей России, и сначала всё шло через бумажные договоры: отправляли договор клиенту, он подписывал и отсылал обратно, потом подписывала я. Пока бумаги ездили по стране туда и обратно, от заявки до денег от СФР проходило 2 месяца. Я перестроила процесс, и стало 2 недели.',
+        'У застройщика та же история с маткапиталом и ипотекой: чем быстрее проходят документы, тем раньше деньги на счёте.']},
+ {icon:'launch',title:'Небольшие запуски каждый месяц',sub:'На каждый приходит от 1 000 до 7 000 человек, и на каждом есть продажи',
+  body:['Кроме больших запусков, у нас каждый месяц проходят небольшие экспертные мероприятия с продажами. На каждое собирается от 1 000 до 7 000 человек.',
+        'База всё время получает пользу и не выгорает, а продажи идут каждый месяц, а не только в большие запуски.'],
+  img:['img/launch.jpg']}
+]};
+
+
+const W='#FFFFFF',T='#C7D2E4',S='stroke-linecap="round" stroke-linejoin="round"';
+const ICONS={
+ dialogs:`<svg viewBox="0 0 64 64" fill="none" ${S}><path d="M14 32a18 18 0 0 1 36 0" stroke="${W}" stroke-width="3"/><rect x="10" y="30" width="8" height="14" rx="3" fill="${W}"/><rect x="46" y="30" width="8" height="14" rx="3" fill="${W}"/><path d="M50 44c0 6-6 9-13 9" stroke="${W}" stroke-width="3"/><circle cx="35" cy="53" r="3" fill="${T}"/><path d="M25 34l5 5 9-10" stroke="${T}" stroke-width="3.2"/></svg>`,
+ bot:`<svg viewBox="0 0 64 64" fill="none" ${S}><path d="M12 18h32a6 6 0 0 1 6 6v14a6 6 0 0 1-6 6H26l-9 7v-7h-5a6 6 0 0 1-6-6V24a6 6 0 0 1 6-6z" fill="${W}"/><circle cx="21" cy="31" r="3" fill="#2D3C55"/><circle cx="31" cy="31" r="3" fill="#2D3C55"/><circle cx="41" cy="31" r="3" fill="#2D3C55"/><path d="M52 8l1.8 4.2L58 14l-4.2 1.8L52 20l-1.8-4.2L46 14l4.2-1.8z" fill="${T}"/></svg>`,
+ channels:`<svg viewBox="0 0 64 64" fill="none" ${S}><path d="M10 29L50 13l-7 36-12-9-6 7v-10l16-14-20 12z" fill="${W}"/><path d="M36 58l8-8 5 4 9-11" stroke="${T}" stroke-width="3.2"/><path d="M52 43h6v6" stroke="${T}" stroke-width="3.2"/></svg>`,
+ training:`<svg viewBox="0 0 64 64" fill="none" ${S}><path d="M32 12L6 23l26 11 26-11z" fill="${W}"/><path d="M16 28v11c0 4 7 8 16 8s16-4 16-8V28" stroke="${W}" stroke-width="3"/><path d="M58 23v14" stroke="${T}" stroke-width="3"/><circle cx="58" cy="40" r="3" fill="${T}"/><path d="M22 54h20" stroke="${T}" stroke-width="3"/></svg>`,
+ revenue:`<svg viewBox="0 0 64 64" fill="none" ${S}><rect x="10" y="38" width="9" height="16" rx="2" fill="${T}"/><rect x="24" y="30" width="9" height="24" rx="2" fill="${W}" opacity=".85"/><rect x="38" y="20" width="9" height="34" rx="2" fill="${W}"/><path d="M10 26l14-8 10 5 16-13" stroke="${T}" stroke-width="3"/><path d="M44 10h6v6" stroke="${T}" stroke-width="3"/></svg>`,
+ fast:`<svg viewBox="0 0 64 64" fill="none" ${S}><rect x="12" y="14" width="34" height="40" rx="5" fill="${W}"/><path d="M19 25h20M19 32h20M19 39h12" stroke="#2D3C55" stroke-width="3"/><circle cx="46" cy="44" r="12" fill="#2D3C55" stroke="${T}" stroke-width="3"/><path d="M46 37v7l5 3" stroke="${T}" stroke-width="3"/><path d="M4 22h5M2 30h7" stroke="${T}" stroke-width="3"/></svg>`,
+ launch:`<svg viewBox="0 0 64 64" fill="none" ${S}><path d="M12 28v10a3 3 0 0 0 3 3h5l16 10V17L20 27h-5a3 3 0 0 0-3 1z" fill="${W}"/><path d="M22 42l3 11h6l-3-10" fill="${W}"/><path d="M44 25a9 9 0 0 1 0 14M49 19a17 17 0 0 1 0 26" stroke="${T}" stroke-width="3"/></svg>`
+};
+const $=s=>document.querySelector(s);
+function el(tag,attrs={},html){const e=document.createElement(tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(html!=null)e.innerHTML=html;return e}
+
+// render case lists
+for(const key of ['exp','inc']){
+  const list=$('#list-'+key);
+  CASES[key].forEach((c,i)=>{
+    const b=el('button',{class:'case',type:'button'});
+    b.appendChild(c.icon?el('div',{class:'thumb ico','aria-hidden':'true'},ICONS[c.icon]):el('img',{class:'thumb',src:c.thumb,alt:'',loading:'lazy'}));
+    b.appendChild(el('div',{class:'t'},'<b>'+c.title+'</b><span>'+c.sub+'</span>'));
+    b.appendChild(el('span',{class:'chev','aria-hidden':'true'},'›'));
+    b.addEventListener('click',()=>openSheet(c,b));
+    list.appendChild(b);
+  });
+}
+
+// tabs
+const tabs=[...document.querySelectorAll('.tab')];
+tabs.forEach(t=>t.addEventListener('click',()=>{
+  tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);$('#'+x.getAttribute('aria-controls')).hidden=!on});
+}));
+
+// sheet
+const sheet=$('#sheet'),scrim=$('#scrim'),body=$('#sheetBody');let lastFocus=null;
+function openSheet(c,from){
+  lastFocus=from;body.innerHTML='';
+  body.appendChild(el('h3',{id:'sheetTitle'},c.title));
+  body.appendChild(el('p',{class:'sub'},c.sub));
+  c.body.forEach(p=>body.appendChild(el('p',{},p)));
+  if(c.video){const v=el('video',{src:c.video,poster:c.poster,autoplay:'',muted:'',loop:'',playsinline:''});v.muted=true;body.appendChild(v);v.play&&v.play().catch(()=>{})}
+  if(c.img)c.img.forEach(s=>body.appendChild(el('img',{class:'full',src:s,alt:c.title})));
+  if(c.ba){body.appendChild(el('p',{},'<b>Было и стало.</b> Сверху – страницы, какими они были до ИИ: простые рисунки. Снизу – те же темы с иллюстрациями, сделанными с ИИ. Разница в качестве видна сразу, а по времени это недели вместо месяцев.'));
+    const ba=el('div',{class:'ba'});ba.innerHTML='<figure><img src="img/ill-before.jpg" alt="Страницы энциклопедии до ИИ"><span class="tag">Было</span></figure><figure><img src="img/ill-after.jpg" alt="Страницы энциклопедии с иллюстрациями, сделанными с ИИ"><span class="tag">Стало</span></figure>';body.appendChild(ba);
+    body.appendChild(el('p',{},'Что получилось в итоге:'))}
+  if(c.gallery){const st=el('div',{class:'strip'});c.gallery.forEach(s=>{const f=el('figure');f.appendChild(el('img',{src:s,alt:'Энциклопедия «Финомика»',loading:'lazy'}));st.appendChild(f)});const g=el('div',{class:'gal'});g.appendChild(st);body.appendChild(g);initGal(g)}
+  if(c.link){const a=el('a',{class:'out',href:c.link.href,target:'_blank',rel:'noopener'},c.link.text);body.appendChild(a)}
+  sheet.style.transform='';sheet.classList.add('on');scrim.classList.add('on');sheet.setAttribute('aria-hidden','false');
+  body.scrollTop=0;document.body.style.overflow='hidden';$('#sheetX').focus({preventScroll:true});
+}
+function closeSheet(){
+  sheet.classList.remove('on');scrim.classList.remove('on');sheet.style.transform='';sheet.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';body.querySelectorAll('video').forEach(v=>v.pause());
+  if(lastFocus)lastFocus.focus({preventScroll:true});
+}
+scrim.addEventListener('click',closeSheet);$('#sheetX').addEventListener('click',closeSheet);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(lb)closeLb();else if(sheet.classList.contains('on'))closeSheet()}});
+// swipe down to close
+(function(){let y0=null,dy=0;
+  const start=e=>{if(e.target.closest('.grab')||body.scrollTop<=0){y0=e.touches[0].clientY;dy=0;sheet.style.transition='none'}};
+  const move=e=>{if(y0==null)return;dy=e.touches[0].clientY-y0;if(dy>0){sheet.style.transform='translateY('+dy+'px)';if(!e.target.closest('.grab')&&body.scrollTop>0){y0=null;sheet.style.transform=''}}};
+  const end=()=>{if(y0==null)return;sheet.style.transition='';if(dy>90)closeSheet();else sheet.style.transform='';y0=null};
+  sheet.addEventListener('touchstart',start,{passive:true});sheet.addEventListener('touchmove',move,{passive:true});sheet.addEventListener('touchend',end);
+})();
+
+// lightbox
+let lb=null;
+function openLb(src,alt){lb=el('div',{class:'lb',role:'dialog','aria-label':'Просмотр изображения'});lb.appendChild(el('img',{src,alt:alt||''}));lb.addEventListener('click',closeLb);document.body.appendChild(lb)}
+function closeLb(){if(lb){lb.remove();lb=null}}
+document.addEventListener('click',e=>{const im=e.target.closest('.strip img,.ba img,.shot,.sheet-body img.full');if(im)openLb(im.src,im.alt)});
+
+// gallery arrows
+function initGal(g){
+  const st=g.querySelector('.strip');
+  const prev=el('button',{class:'arr prev',type:'button','aria-label':'Листать влево'},'‹');
+  const next=el('button',{class:'arr next',type:'button','aria-label':'Листать вправо'},'›');
+  g.appendChild(prev);g.appendChild(next);
+  const step=()=>Math.max(150,st.clientWidth*0.8);
+  prev.addEventListener('click',()=>st.scrollBy({left:-step(),behavior:'smooth'}));
+  next.addEventListener('click',()=>st.scrollBy({left:step(),behavior:'smooth'}));
+  const upd=()=>{prev.disabled=st.scrollLeft<8;next.disabled=st.scrollLeft+st.clientWidth>=st.scrollWidth-8};
+  st.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);
+  upd();setTimeout(upd,300);st.querySelectorAll('img').forEach(i=>i.addEventListener('load',upd));
+}
+document.querySelectorAll('main .gal').forEach(initGal);
+
+// sticky CTA after hero
+const sticky=$('#sticky'),heroCta=$('#heroCta'),meet=$('#meet');
+let heroGone=false,meetIn=false;
+const upd=()=>sticky.classList.toggle('on',heroGone&&!meetIn);
+new IntersectionObserver(([e])=>{heroGone=!e.isIntersecting&&e.boundingClientRect.top<0;upd()}).observe(heroCta);
+new IntersectionObserver(([e])=>{meetIn=e.isIntersecting;upd()},{threshold:.2}).observe(meet);
+
+// copy phone
+$('#copyBtn').addEventListener('click',async()=>{
+  const b=$('#copyBtn');
+  try{await navigator.clipboard.writeText('+79081787435');b.textContent='Скопировано'}
+  catch(_){const r=document.createRange();r.selectNodeContents($('#phoneTxt'));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Выделено'}
+  setTimeout(()=>b.textContent='Скопировать',1800);
+});
+</script>
+
+</body>
+</html>

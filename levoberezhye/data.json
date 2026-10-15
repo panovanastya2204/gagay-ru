@@ -1,0 +1,24 @@
+{
+  "_comment": "Тексты карточек. Меняйте значения в кавычках и сохраняйте файл — модель подхватит их при обновлении страницы. Поле id не трогайте.",
+  "title": "Квартал у реки «Левобережье»",
+  "subtitle": "Ростов-на-Дону · ГК «ЮгСтройИнвест»",
+  "objects": [
+    {"id": "t1", "type": "home", "pin": "I", "title": "Prime Life I", "subtitle": "Литер 1 · башня бизнес-класса", "status": "Сдан", "due": "II кв. 2024", "floors": "24"},
+    {"id": "t2", "type": "home", "pin": "II", "title": "Prime Life II", "subtitle": "Литер 2 · башня бизнес-класса", "status": "Строится", "due": "II кв. 2026", "floors": "24"},
+    {"id": "t3", "type": "home", "pin": "III", "title": "Prime Life III", "subtitle": "Литер 3 · башня бизнес-класса", "status": "Сдан", "due": "III кв. 2025", "floors": "24"},
+    {"id": "l4", "type": "home", "pin": "4", "title": "Литер 4", "subtitle": "Комфорт+ · 3 секции", "status": "Строится", "due": "II кв. 2026", "floors": "20–22–24"},
+    {"id": "l5", "type": "home", "pin": "5", "title": "Литер 5", "subtitle": "Комфорт+ · 3 секции", "status": "Сдан", "due": "IV кв. 2025", "floors": "18–20–22"},
+    {"id": "l6", "type": "home", "pin": "6", "title": "Литер 6", "subtitle": "Дом «Парк Резидент» · 4 секции", "status": "Сдан", "due": "IV кв. 2024", "floors": "16–20–22–24"},
+    {"id": "l7", "type": "home", "pin": "7", "title": "Литер 7", "subtitle": "Дом «Парк Резидент II» · 3 секции", "status": "Сдан", "due": "IV кв. 2024", "floors": "18–20–24"},
+    {"id": "l8", "type": "home", "pin": "8", "title": "Литер 8", "subtitle": "Комфорт+ · 3 секции", "status": "Сдан", "due": "IV кв. 2025", "floors": "18–20–24"},
+    {"id": "l9", "type": "home", "pin": "9", "title": "Литер 9", "subtitle": "Комфорт+ · 4 секции", "status": "Сдан", "due": "III кв. 2025", "floors": "18–20–22–24"},
+    {"id": "l10", "type": "home", "pin": "10", "title": "Литер 10", "subtitle": "Комфорт+ · 3 секции", "status": "Сдан", "due": "II кв. 2025", "floors": "16–22–24"},
+    {"id": "l11", "type": "home", "pin": "11", "title": "Литер 11", "subtitle": "Комфорт+ · 3 секции", "status": "Сдан", "due": "IV кв. 2023", "floors": "18–22–24"},
+    {"id": "l12", "type": "home", "pin": "12", "title": "Литер 12", "subtitle": "Комфорт+ · 4 секции", "status": "Сдан", "due": "I кв. 2024", "floors": "16–20–22–24"},
+    {"id": "l13", "type": "home", "pin": "13", "title": "Литер 13", "subtitle": "Комфорт+ · 3 секции", "status": "Сдан", "due": "III кв. 2023", "floors": "14–16–18"},
+    {"id": "school", "type": "infra", "icon": "school", "title": "Школа № 116", "subtitle": "На 1100 учеников, со стадионом", "status": "Работает", "due": "", "floors": "4"},
+    {"id": "kinder", "type": "infra", "icon": "kinder", "title": "Детский сад № 23 «Причал»", "subtitle": "На 200 мест, с ясельными группами", "status": "Работает", "due": "", "floors": "2"},
+    {"id": "clinic", "type": "infra", "icon": "clinic", "title": "Поликлиника", "subtitle": "Детско-взрослая, на первых этажах", "status": "", "due": "", "floors": ""},
+    {"id": "park", "type": "infra", "icon": "park", "title": "Парк «Левобережный»", "subtitle": "14 га: пруды, амфитеатр, фонтанная аллея, спортплощадки", "status": "Открыт", "due": "", "floors": ""}
+  ]
+}
