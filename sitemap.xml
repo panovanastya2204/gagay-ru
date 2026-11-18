@@ -1,8 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://gagay.ru/</loc>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
+<url><loc>https://gagay.ru/</loc><lastmod>2026-11-18</lastmod><priority>1.0</priority></url>
+<url><loc>https://gagay.ru/opyt/</loc><lastmod>2026-11-18</lastmod><priority>0.9</priority></url>
+<url><loc>https://gagay.ru/rabota/</loc><lastmod>2026-11-18</lastmod><priority>0.9</priority></url>
+<url><loc>https://gagay.ru/lessons/ai-planner/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/lessons/reels-claude-code/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/lessons/transcriber-bot/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/lessons/chatgpt-claude-iphone/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/lessons/sales-dialogs-ai/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/lessons/posts-ai-review/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/lessons/kb-bot-gem/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/lessons/base-offers-ai/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/lessons/ai-layoffs/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/lessons/geo-neuro-recommendations/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/lessons/ai-diy-mistakes/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/lessons/consistent-characters/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/lessons/utility-bill/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/lessons/wardrobe-ai/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/cases/restaurant-finance/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/cases/geo/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/cases/b2b-leads/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/cases/site-from-chat/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/cases/developers/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/cases/books-ai/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/cases/platform/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/cases/sales-qa/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/cases/posts-ai/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/cases/base-offers/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/cases/kb-bots/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/cases/cartoons/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/cases/training/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/cases/revenue/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/cases/first-product/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/cases/marathon/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/cases/matcap/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/cases/game-restaurant/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/cases/game-developer/</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/for/schools/</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/for/developers/</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/for/restaurants/</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
+<url><loc>https://gagay.ru/tags/vaybkoding/</loc><lastmod>2026-11-18</lastmod><priority>0.5</priority></url>
+<url><loc>https://gagay.ru/tags/boty/</loc><lastmod>2026-11-18</lastmod><priority>0.5</priority></url>
+<url><loc>https://gagay.ru/tags/lichnoe/</loc><lastmod>2026-11-18</lastmod><priority>0.5</priority></url>
+<url><loc>https://gagay.ru/tags/kontent/</loc><lastmod>2026-11-18</lastmod><priority>0.5</priority></url>
+<url><loc>https://gagay.ru/tags/avtomatizatsiya/</loc><lastmod>2026-11-18</lastmod><priority>0.5</priority></url>
+<url><loc>https://gagay.ru/tags/start/</loc><lastmod>2026-11-18</lastmod><priority>0.5</priority></url>
+<url><loc>https://gagay.ru/tags/prodazhi/</loc><lastmod>2026-11-18</lastmod><priority>0.5</priority></url>
+<url><loc>https://gagay.ru/tags/analitika/</loc><lastmod>2026-11-18</lastmod><priority>0.5</priority></url>
+<url><loc>https://gagay.ru/tags/komanda/</loc><lastmod>2026-11-18</lastmod><priority>0.5</priority></url>
+<url><loc>https://gagay.ru/tags/marketing/</loc><lastmod>2026-11-18</lastmod><priority>0.5</priority></url>
+<url><loc>https://gagay.ru/tags/sobstvenniku/</loc><lastmod>2026-11-18</lastmod><priority>0.5</priority></url>
+<url><loc>https://gagay.ru/tags/neyropoisk/</loc><lastmod>2026-11-18</lastmod><priority>0.5</priority></url>
+<url><loc>https://gagay.ru/tags/bezopasnost/</loc><lastmod>2026-11-18</lastmod><priority>0.5</priority></url>
+<url><loc>https://gagay.ru/tags/dizayn/</loc><lastmod>2026-11-18</lastmod><priority>0.5</priority></url>
+<url><loc>https://gagay.ru/tags/nedvizhimost/</loc><lastmod>2026-11-18</lastmod><priority>0.5</priority></url>
+<url><loc>https://gagay.ru/tags/restorany/</loc><lastmod>2026-11-18</lastmod><priority>0.5</priority></url>
+<url><loc>https://gagay.ru/tags/produkt/</loc><lastmod>2026-11-18</lastmod><priority>0.5</priority></url>
+<url><loc>https://gagay.ru/tags/trafik/</loc><lastmod>2026-11-18</lastmod><priority>0.5</priority></url>
+<url><loc>https://gagay.ru/tags/protsessy/</loc><lastmod>2026-11-18</lastmod><priority>0.5</priority></url>
+<url><loc>https://gagay.ru/tags/zapusk/</loc><lastmod>2026-11-18</lastmod><priority>0.5</priority></url>
+<url><loc>https://gagay.ru/tags/igra/</loc><lastmod>2026-11-18</lastmod><priority>0.5</priority></url>
+<url><loc>https://gagay.ru/tags/vovlechenie/</loc><lastmod>2026-11-18</lastmod><priority>0.5</priority></url>
+<url><loc>https://gagay.ru/development/</loc><lastmod>2026-11-18</lastmod><priority>0.5</priority></url>
 </urlset>

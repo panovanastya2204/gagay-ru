@@ -1,4 +1,61 @@
 User-agent: *
 Allow: /
 Disallow: /alyans/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /alyans/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /alyans/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /alyans/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /alyans/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /alyans/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /alyans/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /alyans/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /alyans/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /alyans/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /alyans/
+
+User-agent: CCBot
+Allow: /
+Disallow: /alyans/
+
+User-agent: YandexBot
+Allow: /
+Disallow: /alyans/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /alyans/
+
+User-agent: Googlebot
+Allow: /
+Disallow: /alyans/
+
 Sitemap: https://gagay.ru/sitemap.xml

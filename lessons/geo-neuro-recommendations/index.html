@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Почему нейросети не советуют ваш бизнес и как это исправить</title>
+<meta name="description" content="Люди всё чаще спрашивают Алису и ChatGPT, куда пойти и у кого купить. Разбираю, как нейросеть выбирает, и даю промпт для проверки сайта">
+<link rel="canonical" href="https://gagay.ru/lessons/geo-neuro-recommendations/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Настя Гагай">
+<meta property="article:published_time" content="2026-11-12"><meta property="article:modified_time" content="2026-11-12">
+<meta property="og:title" content="Почему нейросети не советуют ваш бизнес и как это исправить">
+<meta property="og:description" content="Люди всё чаще спрашивают Алису и ChatGPT, куда пойти и у кого купить. Разбираю, как нейросеть выбирает, и даю промпт для проверки сайта">
+<meta property="og:url" content="https://gagay.ru/lessons/geo-neuro-recommendations/">
+<meta property="og:image" content="https://gagay.ru/img/cv-geo-neuro-recommendations-960.webp">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Почему нейросети не советуют ваш бизнес и как это исправить">
+<meta name="twitter:description" content="Люди всё чаще спрашивают Алису и ChatGPT, куда пойти и у кого купить. Разбираю, как нейросеть выбирает, и даю промпт для проверки сайта">
+<meta name="twitter:image" content="https://gagay.ru/img/cv-geo-neuro-recommendations-960.webp">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
+<meta property="og:locale" content="ru_RU">
+<meta name="theme-color" content="#3c1298">
+<link rel="icon" href="/img/avatar-160.webp" type="image/webp">
+<link rel="apple-touch-icon" href="/img/avatar-160.webp">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","@id":"https://gagay.ru/lessons/geo-neuro-recommendations/#article","headline":"Почему нейросети не советуют ваш бизнес и как это исправить","description":"Спросите у Алисы «где поужинать в центре города» или у ChatGPT «какой застройщик надёжный». В ответе будет два-три названия. Если вашего там нет, клиент до вас не дойдёт, даже если вы лучше.","image":["https://gagay.ru/img/cv-geo-neuro-recommendations-960.webp"],"datePublished":"2026-11-12","dateModified":"2026-11-12","inLanguage":"ru","author":{"@id":"https://gagay.ru/#person"},"publisher":{"@id":"https://gagay.ru/#person"},"mainEntityOfPage":"https://gagay.ru/lessons/geo-neuro-recommendations/","articleSection":"Статьи","keywords":"маркетинг, нейропоиск"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://gagay.ru/"},{"@type":"ListItem","position":2,"name":"Уроки и статьи","item":"https://gagay.ru/"},{"@type":"ListItem","position":3,"name":"Почему нейросети не советуют ваш бизнес и как это исправить","item":"https://gagay.ru/lessons/geo-neuro-recommendations/"}]}</script>
+<style>/* Типографика по правилам Apple HIG: один шрифт, шкала 13/15/17/20/24/28/34, только обычное и полужирное начертание,
+   вторичный текст серым, длинные заголовки сжаты по трекингу, строка не длиннее ~66 знаков */
+:root{--shadow:0 1px 2px rgba(20,10,40,.05),0 6px 18px rgba(20,10,40,.07);--shadow-hi:0 2px 4px rgba(20,10,40,.06),0 12px 30px rgba(20,10,40,.12);--glow:91,47,214;--a:#3c1298;--a2:#5b2fd6;--ink:#1d1d1f;--ink2:#424245;--mute:#6e6e73;--line:#e8e6ee;--card:#f5f5f7;--tint:#f3effa;--bg:#fff;
+--f:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.47 var(--f);letter-spacing:-.011em;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--a);text-decoration-thickness:1px;text-underline-offset:3px}
+strong,b{font-weight:600}
+em{font-style:italic}
+mark{background:none;color:inherit;text-decoration:underline;text-decoration-color:rgba(91,47,214,.34);text-decoration-thickness:.42em;text-underline-offset:-.14em;text-decoration-skip-ink:none}
+img,video{max-width:100%;height:auto;display:block}
+.w{max-width:760px;margin:0 auto;padding:0 16px}
+.aura{position:relative;overflow:hidden;color:#fff;isolation:isolate;background:radial-gradient(55% 70% at 18% 22%,#7b3dff 0,transparent 62%),radial-gradient(45% 60% at 88% 18%,#ff7a2e 0,transparent 60%),radial-gradient(60% 70% at 70% 100%,#3c1298 0,transparent 65%),radial-gradient(40% 50% at 10% 95%,#e0469a 0,transparent 60%),#1d0b3c}
+.aura::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.28;mix-blend-mode:overlay;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.p1{background:radial-gradient(55% 70% at 20% 30%,#ff7a2e 0,transparent 60%),radial-gradient(50% 65% at 85% 20%,#a55bc9 0,transparent 60%),radial-gradient(60% 70% at 75% 95%,#5a0710 0,transparent 65%),radial-gradient(40% 50% at 15% 95%,#ff9b45 0,transparent 60%),#2b0c1e}
+.p2{background:radial-gradient(55% 60% at 70% 35%,#5b8cf0 0,transparent 62%),radial-gradient(55% 60% at 30% 85%,#f6a3b4 0,transparent 62%),radial-gradient(45% 55% at 15% 15%,#16121a 0,transparent 65%),#7d75a6}
+.p3{background:radial-gradient(55% 75% at 12% 35%,#ff48c8 0,transparent 62%),radial-gradient(60% 70% at 80% 70%,#0a0a0d 0,transparent 66%),radial-gradient(40% 40% at 80% 10%,#7b3dff 0,transparent 60%),#2a0b2c}
+.p4{background:radial-gradient(50% 65% at 25% 25%,#ffb28a 0,transparent 60%),radial-gradient(55% 70% at 80% 75%,#7a0f12 0,transparent 66%),radial-gradient(45% 55% at 85% 15%,#c06ad9 0,transparent 60%),#b9552f}
+.aura b,.aura span,.aura p,.aura h1{text-shadow:0 1px 14px rgba(20,0,30,.2)}
+.glass{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);-webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 10px 30px rgba(20,0,40,.18);border-radius:26px}
+/* шапка */
+.hero{border-radius:32px;margin:16px 0 0;padding:28px;display:grid;grid-template-columns:120px 1fr;gap:10px 24px;align-items:center}
+.hero>img{width:120px;height:120px;border-radius:50%;border:3px solid rgba(255,255,255,.55);box-shadow:0 12px 40px rgba(20,0,40,.35)}
+.hero .name{margin:0;font:600 28px/1.14 var(--f);letter-spacing:-.024em}
+.hero .name span{display:block;font-weight:400;font-size:20px;line-height:1.25;letter-spacing:-.017em;color:rgba(255,255,255,.82);margin-top:6px}
+.hero .name i{display:none}
+.bio{grid-column:1/-1;list-style:none;margin:14px 0 0;padding:14px 18px;font-size:16px;line-height:1.45}
+.bio li{display:flex;gap:10px;margin:6px 0;color:rgba(255,255,255,.96)}
+.bio a{color:#fff;text-decoration-color:rgba(255,255,255,.6)}
+@media(max-width:560px){.hero{padding:20px;grid-template-columns:80px 1fr;gap:8px 16px;border-radius:28px;margin-top:12px}.hero>img{width:80px;height:80px}.hero .name{font-size:22px;line-height:1.18}.hero .name span{font-size:17px;margin-top:4px}.bio{font-size:15px;padding:12px 14px;margin-top:10px}}
+/* вкладки */
+#view{transition:opacity .15s}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.tabs{display:flex;gap:4px;background:var(--card);border-radius:20px;padding:5px;margin:16px 0 18px}
+.tabs a{flex:1;text-align:center;padding:11px 6px;text-decoration:none;color:var(--mute);font:500 15px/1.2 var(--f);letter-spacing:-.01em;border-radius:16px;display:flex;align-items:center;justify-content:center}
+.tabs a[aria-current]{background:#fff;color:var(--ink);font-weight:600;box-shadow:0 2px 10px rgba(40,20,70,.1)}
+@media(max-width:560px){.tabs a{font-size:13.5px;padding:9px 3px}}
+.seg{display:inline-flex;gap:4px;background:var(--card);border-radius:16px;padding:4px;margin:0 0 16px}
+.seg label{padding:8px 22px;border-radius:12px;cursor:pointer;color:var(--mute);font:500 15px/1.2 var(--f)}
+.sw{position:absolute;opacity:0;pointer-events:none}
+#s1:checked~.seg label[for=s1],#s2:checked~.seg label[for=s2]{background:var(--ink);color:#fff;font-weight:600}
+#s1:checked~.l2,#s2:checked~.l1{display:none}
+/* карточки */
+.cards{display:grid;gap:12px;margin:0 0 8px}
+.card{display:flex;gap:16px;align-items:center;padding:12px;border-radius:24px;background:#fff;border:1px solid var(--line);text-decoration:none;color:inherit;box-shadow:0 2px 12px rgba(40,20,70,.05);transition:transform .15s,box-shadow .15s}
+.card:hover{border-color:#d4cce6}
+:focus-visible{outline:3px solid var(--a);outline-offset:3px;border-radius:12px}
+/* тени под плашками и анимация главных кнопок, как на странице для застройщиков */
+.card,.box,.tabs,.seg,blockquote,figure img,figure video,.gal img,.cbtn a,.segs a,.feat a{box-shadow:var(--shadow)}
+.box{border:1px solid var(--line);background:#fff}
+.tabs a[aria-current],.seg label{box-shadow:0 1px 2px rgba(20,10,40,.06),0 3px 10px rgba(20,10,40,.1)}
+.seg label:not(:hover){box-shadow:none}
+#s1:checked~.seg label[for=s1],#s2:checked~.seg label[for=s2]{box-shadow:0 2px 8px rgba(20,10,40,.18)}
+.card:hover{box-shadow:var(--shadow-hi)}
+.btn{position:relative;overflow:hidden;box-shadow:0 4px 12px rgba(var(--glow),.2);animation:pulse 2.6s ease-in-out infinite;transition:transform .12s,background .15s}
+.btn:active{transform:scale(.98)}
+.btn::after{content:"";position:absolute;top:0;bottom:0;left:-40%;width:34%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.3),transparent);transform:skewX(-18deg);animation:shine 2.6s ease-in-out infinite;pointer-events:none}
+.cta .btn{--glow:255,255,255}
+.cta .btn::after{background:linear-gradient(100deg,transparent,rgba(91,47,214,.22),transparent)}
+.cbtn a:first-child{animation:rim 2.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(var(--glow),0),0 4px 12px rgba(var(--glow),.18)}50%{box-shadow:0 0 0 5px rgba(var(--glow),.10),0 6px 22px rgba(var(--glow),.38)}}
+@keyframes shine{0%,55%{left:-40%}100%{left:120%}}
+@keyframes rim{0%,100%{box-shadow:var(--shadow)}50%{box-shadow:0 0 0 3px rgba(255,255,255,.35),0 6px 20px rgba(255,255,255,.25)}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+article p,article li{max-width:68ch}
+.card .th{position:relative;width:128px;aspect-ratio:960/690;flex:none;border-radius:14px;overflow:hidden;background:var(--card)}
+.card .th img{width:100%;height:100%;object-fit:cover}
+.card .th .new{position:absolute;left:0;bottom:0;background:#e8505b;color:#fff;font:600 12px/1 var(--f);font-style:normal;letter-spacing:.05em;padding:5px 9px 5px 8px;border-top-right-radius:10px}
+.card .tx{flex:1;min-width:0;padding:2px 0}
+.card b{display:block;font:500 18px/1.3 var(--f);letter-spacing:-.017em;color:var(--ink)}
+.card .meta{display:block;color:var(--mute);font-size:15px;line-height:1.35;margin-top:4px}
+.card .meta strong{color:var(--a);font-weight:600}
+.card small{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;color:var(--mute);font-size:15px;line-height:1.38;margin-top:2px;letter-spacing:-.01em}
+.card::after{content:"›";color:#b9b4c6;font-size:30px;line-height:1;padding-right:2px}
+@media(max-width:560px){.card{gap:12px;padding:10px}.card .th{width:112px}.card b{font-size:16.5px}.card .meta,.card small{font-size:14px}.cards.cs small{display:none}}
+/* сферы */
+.segs{display:grid;gap:12px;margin:0 0 8px}
+.segs a{border-radius:28px;padding:20px 44px 18px 20px;text-decoration:none;color:#fff;display:block;position:relative}
+.segs a i{font-style:normal;font-size:30px;display:block;margin-bottom:8px}
+.segs a b{display:block;font:600 21px/1.2 var(--f);letter-spacing:-.02em}
+.segs a span{display:block;font-size:15px;line-height:1.4;margin-top:6px;color:rgba(255,255,255,.9)}
+.segs a::after{content:"›";position:absolute;right:20px;top:50%;margin-top:-16px;font-size:34px;line-height:1;opacity:.8}
+.note{color:var(--mute);font-size:15px;line-height:1.4;margin:-4px 0 12px}
+/* плитки с цифрами */
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 8px}
+.feat a{border-radius:26px;padding:18px;min-height:190px;display:flex;flex-direction:column;justify-content:flex-end;text-decoration:none}
+.feat a b{display:block;font:600 34px/1.02 var(--f);letter-spacing:-.034em}
+.feat a span{display:block;font:400 15px/1.35 var(--f);letter-spacing:-.01em;margin-top:8px;color:rgba(255,255,255,.88)}
+@media(max-width:560px){.feat a{min-height:164px;padding:15px}.feat a b{font-size:28px}.feat a span{font-size:14px}}
+.badge{display:inline-block;font:600 12px/1.4 var(--f);color:var(--a);background:var(--tint);padding:3px 10px;border-radius:20px;margin-bottom:6px}
+h2.sec{font:600 20px/1.25 var(--f);letter-spacing:-.01em;color:var(--ink);margin:36px 0 14px}
+.key{border-radius:32px;padding:26px 22px 22px;margin:4px 0 14px}
+.key p.k{font:500 22px/1.32 var(--f);margin:0 0 18px;letter-spacing:-.02em}
+.key p.k strong{font-weight:700}
+.key .who{font:600 15px/1.2 var(--f);opacity:.85;margin:0 0 10px}
+@media(max-width:560px){.key p.k{font-size:19px}}
+.mx{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+.mx div,.mx a{padding:16px;border-radius:22px}
+.mx a.src{display:block;color:inherit;text-decoration:none;position:relative}
+.mx a.src::after{content:"↗";position:absolute;right:14px;top:12px;font-size:17px;opacity:.75}
+.mx a.src:hover{border-color:rgba(255,255,255,.6)}
+.mx b{display:block;font:600 30px/1.04 var(--f);letter-spacing:-.032em}
+.mx span{display:block;font-size:14px;line-height:1.3;margin-top:6px;color:rgba(255,255,255,.88)}
+.mxw{border-radius:28px;padding:12px;margin:18px 0}
+.mxw .mx{margin:0}
+.mx b.sm{font-size:20px;line-height:1.2;letter-spacing:-.01em}
+@media(max-width:560px){.mx{grid-template-columns:1fr 1fr}.mx b{font-size:25px}}
+.box{background:var(--card);border-radius:26px;padding:20px 20px 8px;margin:0 0 14px}
+.box h3{margin:0 0 6px;font:600 21px/1.25 var(--f);letter-spacing:-.02em}
+.price{font:600 28px/1.1 var(--f);letter-spacing:-.025em;color:var(--a);margin:0 0 8px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:8px 0 12px}
+.steps li{counter-increment:s;position:relative;padding-left:42px;margin:0 0 12px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;font:600 14px/1 var(--f);display:flex;align-items:center;justify-content:center}
+details{border-bottom:1px solid var(--line);padding:4px 0}
+summary{cursor:pointer;padding:12px 0;font:600 17px/1.3 var(--f);letter-spacing:-.015em;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--a);font-size:22px;line-height:1;font-weight:400}
+details[open] summary::after{content:"–"}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;text-decoration:none;padding:14px 22px;border-radius:40px;font:600 16px/1.2 var(--f);margin:4px 8px 14px 0}
+.btn:hover{background:var(--a)}
+.btn.tg::before{content:"";width:22px;height:22px;flex:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%232AABEE'/%3E%3Cpath fill='%23fff' d='M5.4 11.8l11.6-4.5c.5-.2 1 .1.8.9l-2 9.3c-.1.6-.5.8-1.1.5l-3-2.2-1.4 1.4c-.2.2-.3.3-.6.3l.2-3.1 5.6-5.1c.2-.2 0-.3-.4-.1l-6.9 4.4-3-.9c-.6-.2-.6-.6.2-.9z'/%3E%3C/svg%3E") center/contain no-repeat}
+.contact{margin:40px 0 0;padding:26px 0 36px}
+.cbox{padding:22px 16px 16px;border-radius:30px}
+.contact h2{font:600 20px/1.2 var(--f);margin:0 0 14px;text-align:center}
+.cbtn{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cbtn a{display:flex;align-items:center;justify-content:center;gap:10px;padding:15px 10px;border-radius:22px;background:rgba(255,255,255,.93);text-decoration:none;color:var(--ink);font:600 16px/1.2 var(--f);text-shadow:none}
+.cbtn a:hover{background:#fff}
+.cbtn small{display:block;color:var(--mute);font-size:13px;font-weight:400;margin-top:2px}
+.foot{color:var(--mute);font-size:13px;text-align:center;margin-top:18px}
+.top{display:flex;align-items:center;gap:10px;padding:14px 0;margin-bottom:18px}
+.top a{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font:600 15px/1.2 var(--f)}
+.top img{width:36px;height:36px;border-radius:50%}
+.top .back{margin-left:auto;font-weight:500;color:var(--ink);background:var(--card);padding:8px 14px;border-radius:20px;font-size:14px}
+/* шапка материала */
+.ahead{border-radius:30px;padding:26px 22px;margin:0 0 22px}
+.ahead h1{font:700 32px/1.12 var(--f);margin:8px 0 12px;letter-spacing:-.03em}
+.ahead .lead{font:400 19px/1.4 var(--f);letter-spacing:-.014em;margin:0;color:rgba(255,255,255,.9)}
+.ahead .badge{background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.3)}
+.ahead .mx{margin:18px 0 0}
+@media(max-width:560px){.ahead{padding:20px 18px;border-radius:26px}.ahead h1{font-size:26px}.ahead .lead{font-size:17px}}
+/* текст материала */
+article p,article ul,article ol,article blockquote,article h2,article h3{max-width:680px}
+article p{margin:0 0 14px}
+article h2{font:600 24px/1.2 var(--f);margin:36px 0 10px;letter-spacing:-.022em}
+article h3{font:600 19px/1.3 var(--f);margin:24px 0 8px;letter-spacing:-.015em}
+article ul,article ol{padding-left:22px;margin:0 0 16px}
+article li{margin:6px 0}
+article li::marker{color:var(--a)}
+article ul.ic{list-style:none;padding:0}
+article ul.ic li{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start;margin:10px 0}
+article ul.ic li>span{font-size:22px;line-height:1.3;text-align:center}
+@media(max-width:560px){article h2{font-size:21px}}
+figure{margin:20px 0}
+figure img,figure video{border-radius:18px;border:1px solid var(--line);width:100%}
+figure.phone img{max-width:300px;margin:0 auto}
+figcaption{color:var(--mute);font-size:13px;line-height:1.4;margin-top:8px;text-align:center}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:20px 0;align-items:start}
+.gal img{border-radius:14px;width:100%;border:1px solid var(--line)}
+blockquote{margin:22px 0;padding:16px 20px;background:var(--tint);border-radius:20px}
+blockquote p{margin:0!important}
+pre{background:#1a1622;color:#f1eef8;padding:16px;border-radius:18px;overflow-x:auto;font-size:14px;line-height:1.5;white-space:pre-wrap;word-break:break-word}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em;letter-spacing:0}
+p code,li code,td code{background:var(--tint);padding:1px 5px;border-radius:6px}
+.tbl{overflow-x:auto;margin:18px 0}
+table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.4}
+th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--card);font:600 13px/1.3 var(--f);color:var(--mute)}
+.emb{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#1a1622;margin:20px 0}
+.emb button{position:absolute;inset:0;width:100%;border:0;background:none;color:#fff;font:600 17px/1.3 var(--f);cursor:pointer}
+.emb iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.cta{border-radius:28px;padding:22px;margin:34px 0 0}
+.cta p{margin:0 0 12px;font:500 19px/1.4 var(--f);letter-spacing:-.014em}
+.cta .btn{background:#fff;color:var(--ink);text-shadow:none}
+.cta a:not(.btn){color:#fff}
+.tgs{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.tgs i,.tgs a{font-style:normal;font-size:12.5px;line-height:1;padding:5px 9px;border-radius:20px;font-weight:600;text-decoration:none;white-space:nowrap}
+.ahead .tgs{margin-top:16px}.ahead .tgs a{font-size:13.5px;padding:7px 12px;text-shadow:none}
+.c0{background:#e3f6e8;color:#1f6f3a}.c1{background:#ffeadb;color:#a94d14}.c2{background:#fde4f1;color:#a82a68}.c3{background:#e1ecff;color:#2349a8}
+.c4{background:#fff1c7;color:#7d5a00}.c5{background:#ece5ff;color:#5530be}.c6{background:#d9f4f1;color:#0d6b64}.c7{background:#ffe4e6;color:#b4123a}.c8{background:#e6e9f2;color:#33405c}.c9{background:#ddf2ff;color:#03649a}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px}
+.chips a{font-size:13.5px;line-height:1.2;padding:9px 13px;border-radius:20px;background:var(--card);color:var(--ink);text-decoration:none}
+.chips a:hover,.chips a[aria-current]{background:var(--ink);color:#fff}
+.chips a small{opacity:.55;margin-left:3px}
+@media(max-width:560px){.hero.compact{padding:14px 16px}.hero.compact .bio{display:none}.hero.compact>img{width:56px;height:56px}.hero.compact{grid-template-columns:56px 1fr}.hero.compact .name{font-size:19px}}
+@media(max-width:560px){.chips.row{flex-wrap:nowrap;overflow-x:auto;margin:0 -16px 16px;padding:0 16px;scrollbar-width:none}.chips.row::-webkit-scrollbar{display:none}.chips.row a{flex:none}}
+.ahead .chips{margin:14px 0 0}
+.ahead .chips a{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.28)}</style>
+</head>
+<body>
+<div class="w">
+<div class="top"><a href="/"><img src="/img/avatar-160.webp" width="36" height="36" alt="">Настя Гагай</a><a class="back" href="/">‹ Уроки и статьи</a></div><header class="ahead aura"><span class="badge">Статья</span><h1>Почему нейросети не советуют ваш бизнес и как это исправить</h1><p class="lead">Спросите у Алисы «где поужинать в центре города» или у ChatGPT «какой застройщик надёжный». В ответе будет два-три названия. Если вашего там нет, клиент до вас не дойдёт, даже если вы лучше.</p><span class="tgs"><a class="c1" href="/tags/marketing/">#маркетинг</a><a class="c1" href="/tags/neyropoisk/">#нейропоиск</a></span></header><article><h2>Поиск уже отвечает за вас</h2>
+<p>Когда человек вводит запрос в браузере, <strong>первым он видит ответ нейросети:</strong> у Яндекса это Алиса, у Google свой ИИ-ответ. Многим этого хватает, и на сайты они уже не переходят. Это видно даже по рекламным доходам Google: <em>пользователи меньше кликают по ссылкам.</em></p>
+<p>Для бизнеса это значит простую вещь. Раньше боролись за первую строчку в поиске. Теперь важно, <mark>попадёте ли вы в короткий список, который нейросеть назовёт сама.</mark></p>
+<h2>Как нейросеть решает, кого рекомендовать</h2>
+<p>Упрощённо это <strong>система баллов.</strong> Нейросеть собирает всё, что про вас написано, и сверяет между собой.</p>
+<ul class="ic"><li><span>🏷️</span><div><strong>Название везде одинаковое:</strong> на сайте, в Яндекс Картах, в статьях. Плюс балл. Где-то «Ромашка», где-то «Romashka», где-то третий вариант: минус.</div></li><li><span>🕒</span><div><strong>Часы работы, адрес и телефон совпадают</strong> во всех источниках: плюс. Расходятся: нейросеть не уверена в вас и <em>не рекомендует.</em></div></li><li><span>📱</span><div><strong>Сайт открывается с телефона,</strong> понятен роботам и написан нормальным языком: плюс.</div></li><li><span>📰</span><div><strong>О вас пишут в разных местах,</strong> и эти тексты свежие: плюс. Разные нейросети берут данные из разных источников: Алиса больше опирается на сервисы Яндекса, ChatGPT и другие смотрят на сайты и публикации.</div></li></ul>
+<p>Когда мы проверили сеть ресторанов по таким критериям, <mark>в среднем вышло 4 балла из 10.</mark> При этом рестораны хорошие и гости их любят: <em>нейросети просто не хватало данных, чтобы в этом убедиться.</em></p>
+<h2>Что делать</h2>
+<ol><li><strong>Навести порядок в данных.</strong> Одинаковое название, адрес, часы и телефон на сайте, в картах, в соцсетях и каталогах. <em>Это самое быстрое и дешёвое.</em></li><li><strong>Переделать сайт.</strong> Техническая часть: чтобы нейросети вообще видели страницы. Смысловая: какими словами вы описываете себя, меню, услуги. И обязательно удобная мобильная версия: куда пойти вечером, ищут с телефона.</li><li><strong>Писать статьи регулярно.</strong> Один раз написать мало: статьи устаревают, и эффект падает. Нужен <strong>постоянный поток</strong> на сайте, в Дзене, в каналах и на площадках, где покупается размещение.</li></ol>
+<h2>Как выглядит сайт, который понимает нейросеть</h2>
+<p>Нейросеть читает код страницы, а не картинку. Поэтому на сайте нужен <strong>текст:</strong> кто вы, где находитесь, что готовите и сколько это стоит. Ниже пример на <strong>выдуманном ресторане «Ольха»</strong>. Он не связан с моими клиентами, фиолетовые отметки показывают, на что смотрит нейросеть.</p>
+<figure><a href="/img/geo-site-home-1440.webp" target="_blank"><img src="/img/geo-site-home-480.webp" srcset="/img/geo-site-home-480.webp 480w, /img/geo-site-home-960.webp 960w, /img/geo-site-home-1440.webp 1440w" sizes="(max-width:720px) 100vw, 688px" width="1440" height="920" alt="Главная страница выдуманного ресторана. Пример, не связан с проектом клиента: город, кухня и формат в заголовке, один адрес и телефон, факты текстом" loading="lazy" decoding="async"></a><figcaption>Главная страница выдуманного ресторана. Пример, не связан с проектом клиента: город, кухня и формат в заголовке, один адрес и телефон, факты текстом</figcaption></figure>
+<p><strong>На главной</strong> сразу видно, <em>что это за место, в каком городе и для кого.</em> Адрес, телефон и график совпадают с Яндекс Картами и 2ГИС, иначе нейросеть теряет доверие к данным.</p>
+<figure><a href="/img/geo-site-menu-1440.webp" target="_blank"><img src="/img/geo-site-menu-480.webp" srcset="/img/geo-site-menu-480.webp 480w, /img/geo-site-menu-960.webp 960w, /img/geo-site-menu-1440.webp 1440w" sizes="(max-width:720px) 100vw, 688px" width="1440" height="1090" alt="Меню выдуманного ресторана. Пример, не связан с проектом клиента: меню текстом, цена и описание у каждого блюда" loading="lazy" decoding="async"></a><figcaption>Меню выдуманного ресторана. Пример, не связан с проектом клиента: меню текстом, цена и описание у каждого блюда</figcaption></figure>
+<p><strong>Меню должно быть текстом,</strong> а не PDF и не картинкой: <mark>у каждого блюда название, цена и описание.</mark> По таким описаниям нейросеть отвечает на вопросы вроде «где подают уху».</p>
+<figure><a href="/img/geo-site-dish-1440.webp" target="_blank"><img src="/img/geo-site-dish-480.webp" srcset="/img/geo-site-dish-480.webp 480w, /img/geo-site-dish-960.webp 960w, /img/geo-site-dish-1440.webp 1440w" sizes="(max-width:720px) 100vw, 688px" width="1440" height="1180" alt="Страница блюда выдуманного ресторана. Пример, не связан с проектом клиента: описание по схеме и вопросы гостей" loading="lazy" decoding="async"></a><figcaption>Страница блюда выдуманного ресторана. Пример, не связан с проектом клиента: описание по схеме и вопросы гостей</figcaption></figure>
+<p><strong>Страница блюда</strong> строится по схеме: что это, из чего, как готовим, с чем подаём, чем отличается. Внизу короткие вопросы гостей с ответами. Состав и способ приготовления берите настоящие, от шефа.</p>
+<p>Ещё три технические вещи:</p>
+<ul class="ic"><li><span>📱</span><div><strong>Удобная мобильная версия:</strong> куда пойти вечером, ищут с телефона.</div></li><li><span>🔓</span><div><strong>Сайт открыт для поисковых роботов и нейросетей:</strong> проверьте, что он не закрыт настройками.</div></li><li><span>🧭</span><div><strong>Подключён Яндекс Вебмастер и Bing Webmaster Tools:</strong> это бесплатные кабинеты, через которые поисковики узнают об обновлениях. <em>Через Bing ищет ChatGPT.</em></div></li></ul>
+<h2>Когда ждать результат</h2>
+<p>Быстрее всех реагирует Алиса, потому что берёт ответы из Яндекс Карт и Дзена. ChatGPT и Claude ждут, пока о вас напишут в нескольких статьях.</p>
+<div class="tbl"><table><thead><tr><th>Нейросеть</th><th>Когда начнёт советовать</th><th>От чего зависит</th></tr></thead><tbody><tr><td>Алиса</td><td>через 3–6 недель</td><td>Карточка в Яндекс Картах и статьи на Дзене</td></tr><tr><td>Gemini</td><td>через 1–2 месяца</td><td>Карточка в Google Картах</td></tr><tr><td>ChatGPT и Claude</td><td>через 2–4 месяца</td><td>Статьи-подборки и страницы блюд на сайте</td></tr></tbody></table></div>
+<p>Узнать, работает ли, просто: <strong>раз в неделю задавайте всем нейросетям одни и те же вопросы,</strong> как обычный гость, и записывайте в таблицу, назвали ли вас и кого назвали рядом. Через месяц будет видно, где сдвинулось. Конкретного места в ответах не обещает никто: нейросетью нельзя управлять напрямую.</p>
+<h2>Сколько это стоит и как сделать дешевле</h2>
+<p>Если поручить статьи маркетологу, один человек потянет <strong>два-три ресторана.</strong> На девять это три человека, <mark>около 3,6 млн ₽ в год</mark> только зарплаты, плюс взносы.</p>
+<p>Я делаю это системой из нескольких ИИ-агентов:</p>
+<ul><li>первый собирает инфоповоды и составляет контент-план, человек его согласует;</li><li>второй пишет статьи по правилам: живо, по делу, без воды и без «нейросетевого» стиля, человек проверяет;</li><li>третий публикует на сайте, в Дзене и в каналах и готовит уникальные версии статьи для внешних площадок.</li></ul>
+<p>На всю сеть хватает <strong>одного сотрудника, которому нужно 2–4 часа в день.</strong> Каждая его правка попадает в инструкцию агентов, поэтому <em>со временем правок становится меньше.</em> Экономия получается <mark>больше 3 млн ₽ в год.</mark></p>
+<h2>Проверьте свой сайт сами</h2>
+<p>Скопируйте промпт в ChatGPT, Claude или Алису и подставьте свои данные.</p>
+<pre><code>Ты эксперт по рекомендациям нейросетей (GEO). Проверь, насколько мой бизнес
+готов к тому, чтобы его рекомендовали ChatGPT, Алиса и другие ИИ-помощники.
+
+Бизнес: [название, город, чем занимаемся]
+Сайт: [адрес]
+Карточка в Яндекс Картах: [ссылка]
+Соцсети и каталоги: [ссылки]
+
+1. Найди всё, что есть обо мне в открытых источниках.
+2. Сравни название, адрес, телефон, часы работы во всех источниках. Выпиши расхождения.
+3. Оцени сайт: открывается ли он с телефона, понятно ли из текста, чем мы
+   занимаемся, для кого и где, есть ли цены, отзывы, ответы на частые вопросы.
+4. Спроси себя как пользователь «где лучший [наша ниша] в [город]» и скажи,
+   попадаем ли мы в ответ. Если нет, кто попадает и почему.
+5. Поставь оценку от 1 до 10 и дай 10 конкретных действий по порядку важности.</code></pre>
+<blockquote><p>Если хотите, чтобы я посмотрела ваш бизнес и предложила план, напишите мне. На консультации разберём, с чего начать именно вам.</p></blockquote></article><div class="cta aura p3">
+<p>Хотите так же в своём бизнесе? Напишите, коротко расскажите о задаче, и я скажу, чем могу помочь.</p>
+<a class="btn tg" href="https://t.me/npanova" target="_blank" rel="noopener">Написать в Telegram</a> <a href="/rabota/">Консультации и работа</a>
+</div>
+<section class="contact" id="contact">
+<div class="aura p4 cbox">
+<h2>Связаться лично</h2>
+<div class="cbtn">
+<a href="https://t.me/npanova" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#2AABEE"/><path fill="#fff" d="M5.4 11.8l11.6-4.5c.5-.2 1 .1.8.9l-2 9.3c-.1.6-.5.8-1.1.5l-3-2.2-1.4 1.4c-.2.2-.3.3-.6.3l.2-3.1 5.6-5.1c.2-.2 0-.3-.4-.1l-6.9 4.4-3-.9c-.6-.2-.6-.6.2-.9z"/></svg><span>Telegram<small>@npanova</small></span></a>
+<a href="https://max.ru/u/f9LHodD0cOJeLIM-XhOQ_u_l2H61b1TZ78Pvdx1J6JTV9Ub95zTLypmwY4I" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><defs><linearGradient id="mx" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3fb4ff"/><stop offset=".55" stop-color="#4a4cf5"/><stop offset="1" stop-color="#9b3cf0"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#mx)"/><path fill="#fff" d="M12 5.2a6.6 6.6 0 0 0-6.6 6.7c0 1.4.4 2.7 1 3.7l-.7 2.7 2.7-.7a6.6 6.6 0 1 0 3.6-12.4zm0 10.3a3.6 3.6 0 1 1 0-7.3 3.6 3.6 0 0 1 0 7.3z"/></svg><span>MAX<small>написать</small></span></a>
+</div>
+</div>
+<p class="foot">Настя Гагай, Ростов-на-Дону, 2026</p>
+</section>
+</div>
+
+</body>
+</html>

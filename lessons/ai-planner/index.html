@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Свой ИИ-планер: бот в Telegram и приложение под ваши задачи</title>
+<meta name="description" content="Без программирования, за 3–4 вечера. Как я сделала свой планер и как повторить по шагам">
+<link rel="canonical" href="https://gagay.ru/lessons/ai-planner/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Настя Гагай">
+<meta property="article:published_time" content="2026-11-11"><meta property="article:modified_time" content="2026-11-12">
+<meta property="og:title" content="Свой ИИ-планер: бот в Telegram и приложение под ваши задачи">
+<meta property="og:description" content="Без программирования, за 3–4 вечера. Как я сделала свой планер и как повторить по шагам">
+<meta property="og:url" content="https://gagay.ru/lessons/ai-planner/">
+<meta property="og:image" content="https://gagay.ru/img/cv-ai-planner-960.webp">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Свой ИИ-планер: бот в Telegram и приложение под ваши задачи">
+<meta name="twitter:description" content="Без программирования, за 3–4 вечера. Как я сделала свой планер и как повторить по шагам">
+<meta name="twitter:image" content="https://gagay.ru/img/cv-ai-planner-960.webp">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
+<meta property="og:locale" content="ru_RU">
+<meta name="theme-color" content="#3c1298">
+<link rel="icon" href="/img/avatar-160.webp" type="image/webp">
+<link rel="apple-touch-icon" href="/img/avatar-160.webp">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","@id":"https://gagay.ru/lessons/ai-planner/#article","headline":"Свой ИИ-планер: бот в Telegram и приложение под ваши задачи","description":"Бот понимает текст и голос, утром присылает план, а приложение с теми же делами открывается с иконки на телефоне. Какие в нём разделы и правила, решаете вы сами.","image":["https://gagay.ru/img/cv-ai-planner-960.webp"],"datePublished":"2026-11-11","dateModified":"2026-11-12","inLanguage":"ru","author":{"@id":"https://gagay.ru/#person"},"publisher":{"@id":"https://gagay.ru/#person"},"mainEntityOfPage":"https://gagay.ru/lessons/ai-planner/","articleSection":"Уроки","keywords":"вайбкодинг, боты, личное"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://gagay.ru/"},{"@type":"ListItem","position":2,"name":"Уроки и статьи","item":"https://gagay.ru/"},{"@type":"ListItem","position":3,"name":"Свой ИИ-планер: бот в Telegram и приложение под ваши задачи","item":"https://gagay.ru/lessons/ai-planner/"}]}</script>
+<style>/* Типографика по правилам Apple HIG: один шрифт, шкала 13/15/17/20/24/28/34, только обычное и полужирное начертание,
+   вторичный текст серым, длинные заголовки сжаты по трекингу, строка не длиннее ~66 знаков */
+:root{--shadow:0 1px 2px rgba(20,10,40,.05),0 6px 18px rgba(20,10,40,.07);--shadow-hi:0 2px 4px rgba(20,10,40,.06),0 12px 30px rgba(20,10,40,.12);--glow:91,47,214;--a:#3c1298;--a2:#5b2fd6;--ink:#1d1d1f;--ink2:#424245;--mute:#6e6e73;--line:#e8e6ee;--card:#f5f5f7;--tint:#f3effa;--bg:#fff;
+--f:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.47 var(--f);letter-spacing:-.011em;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--a);text-decoration-thickness:1px;text-underline-offset:3px}
+strong,b{font-weight:600}
+em{font-style:italic}
+mark{background:none;color:inherit;text-decoration:underline;text-decoration-color:rgba(91,47,214,.34);text-decoration-thickness:.42em;text-underline-offset:-.14em;text-decoration-skip-ink:none}
+img,video{max-width:100%;height:auto;display:block}
+.w{max-width:760px;margin:0 auto;padding:0 16px}
+.aura{position:relative;overflow:hidden;color:#fff;isolation:isolate;background:radial-gradient(55% 70% at 18% 22%,#7b3dff 0,transparent 62%),radial-gradient(45% 60% at 88% 18%,#ff7a2e 0,transparent 60%),radial-gradient(60% 70% at 70% 100%,#3c1298 0,transparent 65%),radial-gradient(40% 50% at 10% 95%,#e0469a 0,transparent 60%),#1d0b3c}
+.aura::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.28;mix-blend-mode:overlay;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.p1{background:radial-gradient(55% 70% at 20% 30%,#ff7a2e 0,transparent 60%),radial-gradient(50% 65% at 85% 20%,#a55bc9 0,transparent 60%),radial-gradient(60% 70% at 75% 95%,#5a0710 0,transparent 65%),radial-gradient(40% 50% at 15% 95%,#ff9b45 0,transparent 60%),#2b0c1e}
+.p2{background:radial-gradient(55% 60% at 70% 35%,#5b8cf0 0,transparent 62%),radial-gradient(55% 60% at 30% 85%,#f6a3b4 0,transparent 62%),radial-gradient(45% 55% at 15% 15%,#16121a 0,transparent 65%),#7d75a6}
+.p3{background:radial-gradient(55% 75% at 12% 35%,#ff48c8 0,transparent 62%),radial-gradient(60% 70% at 80% 70%,#0a0a0d 0,transparent 66%),radial-gradient(40% 40% at 80% 10%,#7b3dff 0,transparent 60%),#2a0b2c}
+.p4{background:radial-gradient(50% 65% at 25% 25%,#ffb28a 0,transparent 60%),radial-gradient(55% 70% at 80% 75%,#7a0f12 0,transparent 66%),radial-gradient(45% 55% at 85% 15%,#c06ad9 0,transparent 60%),#b9552f}
+.aura b,.aura span,.aura p,.aura h1{text-shadow:0 1px 14px rgba(20,0,30,.2)}
+.glass{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);-webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 10px 30px rgba(20,0,40,.18);border-radius:26px}
+/* шапка */
+.hero{border-radius:32px;margin:16px 0 0;padding:28px;display:grid;grid-template-columns:120px 1fr;gap:10px 24px;align-items:center}
+.hero>img{width:120px;height:120px;border-radius:50%;border:3px solid rgba(255,255,255,.55);box-shadow:0 12px 40px rgba(20,0,40,.35)}
+.hero .name{margin:0;font:600 28px/1.14 var(--f);letter-spacing:-.024em}
+.hero .name span{display:block;font-weight:400;font-size:20px;line-height:1.25;letter-spacing:-.017em;color:rgba(255,255,255,.82);margin-top:6px}
+.hero .name i{display:none}
+.bio{grid-column:1/-1;list-style:none;margin:14px 0 0;padding:14px 18px;font-size:16px;line-height:1.45}
+.bio li{display:flex;gap:10px;margin:6px 0;color:rgba(255,255,255,.96)}
+.bio a{color:#fff;text-decoration-color:rgba(255,255,255,.6)}
+@media(max-width:560px){.hero{padding:20px;grid-template-columns:80px 1fr;gap:8px 16px;border-radius:28px;margin-top:12px}.hero>img{width:80px;height:80px}.hero .name{font-size:22px;line-height:1.18}.hero .name span{font-size:17px;margin-top:4px}.bio{font-size:15px;padding:12px 14px;margin-top:10px}}
+/* вкладки */
+#view{transition:opacity .15s}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.tabs{display:flex;gap:4px;background:var(--card);border-radius:20px;padding:5px;margin:16px 0 18px}
+.tabs a{flex:1;text-align:center;padding:11px 6px;text-decoration:none;color:var(--mute);font:500 15px/1.2 var(--f);letter-spacing:-.01em;border-radius:16px;display:flex;align-items:center;justify-content:center}
+.tabs a[aria-current]{background:#fff;color:var(--ink);font-weight:600;box-shadow:0 2px 10px rgba(40,20,70,.1)}
+@media(max-width:560px){.tabs a{font-size:13.5px;padding:9px 3px}}
+.seg{display:inline-flex;gap:4px;background:var(--card);border-radius:16px;padding:4px;margin:0 0 16px}
+.seg label{padding:8px 22px;border-radius:12px;cursor:pointer;color:var(--mute);font:500 15px/1.2 var(--f)}
+.sw{position:absolute;opacity:0;pointer-events:none}
+#s1:checked~.seg label[for=s1],#s2:checked~.seg label[for=s2]{background:var(--ink);color:#fff;font-weight:600}
+#s1:checked~.l2,#s2:checked~.l1{display:none}
+/* карточки */
+.cards{display:grid;gap:12px;margin:0 0 8px}
+.card{display:flex;gap:16px;align-items:center;padding:12px;border-radius:24px;background:#fff;border:1px solid var(--line);text-decoration:none;color:inherit;box-shadow:0 2px 12px rgba(40,20,70,.05);transition:transform .15s,box-shadow .15s}
+.card:hover{border-color:#d4cce6}
+:focus-visible{outline:3px solid var(--a);outline-offset:3px;border-radius:12px}
+/* тени под плашками и анимация главных кнопок, как на странице для застройщиков */
+.card,.box,.tabs,.seg,blockquote,figure img,figure video,.gal img,.cbtn a,.segs a,.feat a{box-shadow:var(--shadow)}
+.box{border:1px solid var(--line);background:#fff}
+.tabs a[aria-current],.seg label{box-shadow:0 1px 2px rgba(20,10,40,.06),0 3px 10px rgba(20,10,40,.1)}
+.seg label:not(:hover){box-shadow:none}
+#s1:checked~.seg label[for=s1],#s2:checked~.seg label[for=s2]{box-shadow:0 2px 8px rgba(20,10,40,.18)}
+.card:hover{box-shadow:var(--shadow-hi)}
+.btn{position:relative;overflow:hidden;box-shadow:0 4px 12px rgba(var(--glow),.2);animation:pulse 2.6s ease-in-out infinite;transition:transform .12s,background .15s}
+.btn:active{transform:scale(.98)}
+.btn::after{content:"";position:absolute;top:0;bottom:0;left:-40%;width:34%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.3),transparent);transform:skewX(-18deg);animation:shine 2.6s ease-in-out infinite;pointer-events:none}
+.cta .btn{--glow:255,255,255}
+.cta .btn::after{background:linear-gradient(100deg,transparent,rgba(91,47,214,.22),transparent)}
+.cbtn a:first-child{animation:rim 2.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(var(--glow),0),0 4px 12px rgba(var(--glow),.18)}50%{box-shadow:0 0 0 5px rgba(var(--glow),.10),0 6px 22px rgba(var(--glow),.38)}}
+@keyframes shine{0%,55%{left:-40%}100%{left:120%}}
+@keyframes rim{0%,100%{box-shadow:var(--shadow)}50%{box-shadow:0 0 0 3px rgba(255,255,255,.35),0 6px 20px rgba(255,255,255,.25)}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+article p,article li{max-width:68ch}
+.card .th{position:relative;width:128px;aspect-ratio:960/690;flex:none;border-radius:14px;overflow:hidden;background:var(--card)}
+.card .th img{width:100%;height:100%;object-fit:cover}
+.card .th .new{position:absolute;left:0;bottom:0;background:#e8505b;color:#fff;font:600 12px/1 var(--f);font-style:normal;letter-spacing:.05em;padding:5px 9px 5px 8px;border-top-right-radius:10px}
+.card .tx{flex:1;min-width:0;padding:2px 0}
+.card b{display:block;font:500 18px/1.3 var(--f);letter-spacing:-.017em;color:var(--ink)}
+.card .meta{display:block;color:var(--mute);font-size:15px;line-height:1.35;margin-top:4px}
+.card .meta strong{color:var(--a);font-weight:600}
+.card small{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;color:var(--mute);font-size:15px;line-height:1.38;margin-top:2px;letter-spacing:-.01em}
+.card::after{content:"›";color:#b9b4c6;font-size:30px;line-height:1;padding-right:2px}
+@media(max-width:560px){.card{gap:12px;padding:10px}.card .th{width:112px}.card b{font-size:16.5px}.card .meta,.card small{font-size:14px}.cards.cs small{display:none}}
+/* сферы */
+.segs{display:grid;gap:12px;margin:0 0 8px}
+.segs a{border-radius:28px;padding:20px 44px 18px 20px;text-decoration:none;color:#fff;display:block;position:relative}
+.segs a i{font-style:normal;font-size:30px;display:block;margin-bottom:8px}
+.segs a b{display:block;font:600 21px/1.2 var(--f);letter-spacing:-.02em}
+.segs a span{display:block;font-size:15px;line-height:1.4;margin-top:6px;color:rgba(255,255,255,.9)}
+.segs a::after{content:"›";position:absolute;right:20px;top:50%;margin-top:-16px;font-size:34px;line-height:1;opacity:.8}
+.note{color:var(--mute);font-size:15px;line-height:1.4;margin:-4px 0 12px}
+/* плитки с цифрами */
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 8px}
+.feat a{border-radius:26px;padding:18px;min-height:190px;display:flex;flex-direction:column;justify-content:flex-end;text-decoration:none}
+.feat a b{display:block;font:600 34px/1.02 var(--f);letter-spacing:-.034em}
+.feat a span{display:block;font:400 15px/1.35 var(--f);letter-spacing:-.01em;margin-top:8px;color:rgba(255,255,255,.88)}
+@media(max-width:560px){.feat a{min-height:164px;padding:15px}.feat a b{font-size:28px}.feat a span{font-size:14px}}
+.badge{display:inline-block;font:600 12px/1.4 var(--f);color:var(--a);background:var(--tint);padding:3px 10px;border-radius:20px;margin-bottom:6px}
+h2.sec{font:600 20px/1.25 var(--f);letter-spacing:-.01em;color:var(--ink);margin:36px 0 14px}
+.key{border-radius:32px;padding:26px 22px 22px;margin:4px 0 14px}
+.key p.k{font:500 22px/1.32 var(--f);margin:0 0 18px;letter-spacing:-.02em}
+.key p.k strong{font-weight:700}
+.key .who{font:600 15px/1.2 var(--f);opacity:.85;margin:0 0 10px}
+@media(max-width:560px){.key p.k{font-size:19px}}
+.mx{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+.mx div,.mx a{padding:16px;border-radius:22px}
+.mx a.src{display:block;color:inherit;text-decoration:none;position:relative}
+.mx a.src::after{content:"↗";position:absolute;right:14px;top:12px;font-size:17px;opacity:.75}
+.mx a.src:hover{border-color:rgba(255,255,255,.6)}
+.mx b{display:block;font:600 30px/1.04 var(--f);letter-spacing:-.032em}
+.mx span{display:block;font-size:14px;line-height:1.3;margin-top:6px;color:rgba(255,255,255,.88)}
+.mxw{border-radius:28px;padding:12px;margin:18px 0}
+.mxw .mx{margin:0}
+.mx b.sm{font-size:20px;line-height:1.2;letter-spacing:-.01em}
+@media(max-width:560px){.mx{grid-template-columns:1fr 1fr}.mx b{font-size:25px}}
+.box{background:var(--card);border-radius:26px;padding:20px 20px 8px;margin:0 0 14px}
+.box h3{margin:0 0 6px;font:600 21px/1.25 var(--f);letter-spacing:-.02em}
+.price{font:600 28px/1.1 var(--f);letter-spacing:-.025em;color:var(--a);margin:0 0 8px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:8px 0 12px}
+.steps li{counter-increment:s;position:relative;padding-left:42px;margin:0 0 12px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;font:600 14px/1 var(--f);display:flex;align-items:center;justify-content:center}
+details{border-bottom:1px solid var(--line);padding:4px 0}
+summary{cursor:pointer;padding:12px 0;font:600 17px/1.3 var(--f);letter-spacing:-.015em;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--a);font-size:22px;line-height:1;font-weight:400}
+details[open] summary::after{content:"–"}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;text-decoration:none;padding:14px 22px;border-radius:40px;font:600 16px/1.2 var(--f);margin:4px 8px 14px 0}
+.btn:hover{background:var(--a)}
+.btn.tg::before{content:"";width:22px;height:22px;flex:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%232AABEE'/%3E%3Cpath fill='%23fff' d='M5.4 11.8l11.6-4.5c.5-.2 1 .1.8.9l-2 9.3c-.1.6-.5.8-1.1.5l-3-2.2-1.4 1.4c-.2.2-.3.3-.6.3l.2-3.1 5.6-5.1c.2-.2 0-.3-.4-.1l-6.9 4.4-3-.9c-.6-.2-.6-.6.2-.9z'/%3E%3C/svg%3E") center/contain no-repeat}
+.contact{margin:40px 0 0;padding:26px 0 36px}
+.cbox{padding:22px 16px 16px;border-radius:30px}
+.contact h2{font:600 20px/1.2 var(--f);margin:0 0 14px;text-align:center}
+.cbtn{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cbtn a{display:flex;align-items:center;justify-content:center;gap:10px;padding:15px 10px;border-radius:22px;background:rgba(255,255,255,.93);text-decoration:none;color:var(--ink);font:600 16px/1.2 var(--f);text-shadow:none}
+.cbtn a:hover{background:#fff}
+.cbtn small{display:block;color:var(--mute);font-size:13px;font-weight:400;margin-top:2px}
+.foot{color:var(--mute);font-size:13px;text-align:center;margin-top:18px}
+.top{display:flex;align-items:center;gap:10px;padding:14px 0;margin-bottom:18px}
+.top a{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font:600 15px/1.2 var(--f)}
+.top img{width:36px;height:36px;border-radius:50%}
+.top .back{margin-left:auto;font-weight:500;color:var(--ink);background:var(--card);padding:8px 14px;border-radius:20px;font-size:14px}
+/* шапка материала */
+.ahead{border-radius:30px;padding:26px 22px;margin:0 0 22px}
+.ahead h1{font:700 32px/1.12 var(--f);margin:8px 0 12px;letter-spacing:-.03em}
+.ahead .lead{font:400 19px/1.4 var(--f);letter-spacing:-.014em;margin:0;color:rgba(255,255,255,.9)}
+.ahead .badge{background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.3)}
+.ahead .mx{margin:18px 0 0}
+@media(max-width:560px){.ahead{padding:20px 18px;border-radius:26px}.ahead h1{font-size:26px}.ahead .lead{font-size:17px}}
+/* текст материала */
+article p,article ul,article ol,article blockquote,article h2,article h3{max-width:680px}
+article p{margin:0 0 14px}
+article h2{font:600 24px/1.2 var(--f);margin:36px 0 10px;letter-spacing:-.022em}
+article h3{font:600 19px/1.3 var(--f);margin:24px 0 8px;letter-spacing:-.015em}
+article ul,article ol{padding-left:22px;margin:0 0 16px}
+article li{margin:6px 0}
+article li::marker{color:var(--a)}
+article ul.ic{list-style:none;padding:0}
+article ul.ic li{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start;margin:10px 0}
+article ul.ic li>span{font-size:22px;line-height:1.3;text-align:center}
+@media(max-width:560px){article h2{font-size:21px}}
+figure{margin:20px 0}
+figure img,figure video{border-radius:18px;border:1px solid var(--line);width:100%}
+figure.phone img{max-width:300px;margin:0 auto}
+figcaption{color:var(--mute);font-size:13px;line-height:1.4;margin-top:8px;text-align:center}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:20px 0;align-items:start}
+.gal img{border-radius:14px;width:100%;border:1px solid var(--line)}
+blockquote{margin:22px 0;padding:16px 20px;background:var(--tint);border-radius:20px}
+blockquote p{margin:0!important}
+pre{background:#1a1622;color:#f1eef8;padding:16px;border-radius:18px;overflow-x:auto;font-size:14px;line-height:1.5;white-space:pre-wrap;word-break:break-word}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em;letter-spacing:0}
+p code,li code,td code{background:var(--tint);padding:1px 5px;border-radius:6px}
+.tbl{overflow-x:auto;margin:18px 0}
+table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.4}
+th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--card);font:600 13px/1.3 var(--f);color:var(--mute)}
+.emb{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#1a1622;margin:20px 0}
+.emb button{position:absolute;inset:0;width:100%;border:0;background:none;color:#fff;font:600 17px/1.3 var(--f);cursor:pointer}
+.emb iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.cta{border-radius:28px;padding:22px;margin:34px 0 0}
+.cta p{margin:0 0 12px;font:500 19px/1.4 var(--f);letter-spacing:-.014em}
+.cta .btn{background:#fff;color:var(--ink);text-shadow:none}
+.cta a:not(.btn){color:#fff}
+.tgs{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.tgs i,.tgs a{font-style:normal;font-size:12.5px;line-height:1;padding:5px 9px;border-radius:20px;font-weight:600;text-decoration:none;white-space:nowrap}
+.ahead .tgs{margin-top:16px}.ahead .tgs a{font-size:13.5px;padding:7px 12px;text-shadow:none}
+.c0{background:#e3f6e8;color:#1f6f3a}.c1{background:#ffeadb;color:#a94d14}.c2{background:#fde4f1;color:#a82a68}.c3{background:#e1ecff;color:#2349a8}
+.c4{background:#fff1c7;color:#7d5a00}.c5{background:#ece5ff;color:#5530be}.c6{background:#d9f4f1;color:#0d6b64}.c7{background:#ffe4e6;color:#b4123a}.c8{background:#e6e9f2;color:#33405c}.c9{background:#ddf2ff;color:#03649a}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px}
+.chips a{font-size:13.5px;line-height:1.2;padding:9px 13px;border-radius:20px;background:var(--card);color:var(--ink);text-decoration:none}
+.chips a:hover,.chips a[aria-current]{background:var(--ink);color:#fff}
+.chips a small{opacity:.55;margin-left:3px}
+@media(max-width:560px){.hero.compact{padding:14px 16px}.hero.compact .bio{display:none}.hero.compact>img{width:56px;height:56px}.hero.compact{grid-template-columns:56px 1fr}.hero.compact .name{font-size:19px}}
+@media(max-width:560px){.chips.row{flex-wrap:nowrap;overflow-x:auto;margin:0 -16px 16px;padding:0 16px;scrollbar-width:none}.chips.row::-webkit-scrollbar{display:none}.chips.row a{flex:none}}
+.ahead .chips{margin:14px 0 0}
+.ahead .chips a{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.28)}</style>
+</head>
+<body>
+<div class="w">
+<div class="top"><a href="/"><img src="/img/avatar-160.webp" width="36" height="36" alt="">Настя Гагай</a><a class="back" href="/">‹ Уроки и статьи</a></div><header class="ahead aura p1"><span class="badge">Урок</span><h1>Свой ИИ-планер: бот в Telegram и приложение под ваши задачи</h1><p class="lead">Бот понимает текст и голос, утром присылает план, а приложение с теми же делами открывается с иконки на телефоне. Какие в нём разделы и правила, решаете вы сами.</p><div class="mx"><div class="glass"><b>~10 часов</b><span>чистой работы до первой версии</span></div><div class="glass"><b>544 ₽</b><span>в месяц сервер, чтобы работал круглосуточно</span></div></div><span class="tgs"><a class="c6" href="/tags/vaybkoding/">#вайбкодинг</a><a class="c5" href="/tags/boty/">#боты</a><a class="c7" href="/tags/lichnoe/">#личное</a></span></header><article><h2>Почему свой, а не готовый</h2>
+<p>Готовые планеры сделаны под среднего человека. <strong>Свой собирается под ваши боли.</strong> Мои были такие:</p>
+<div class="tbl"><table><thead><tr><th>Что раздражало</th><th>Как решено в моём планере</th></tr></thead><tbody><tr><td>В заметках больше 100 дел, туда не хочется заходить</td><td>На главном экране только сегодня, и не больше 6 часов дел. Остальное в разделе «Позже»</td></tr><tr><td>План на неделю приходилось пересобирать каждый день</td><td>Несделанное само переезжает. Дела с конкретной датой бот не трогает</td></tr><tr><td>Много созвонов, непонятно, когда делать остальное</td><td>Подключены календари: при четырёх часах встреч планер знает, что на дела осталось два</td></tr><tr><td>Покупки в разных местах</td><td>Один раздел: покупки, вишлист, регулярное. Вишлист отправляется друзьям одной кнопкой</td></tr><tr><td>Боялась доверить боту что-то сложное</td><td>Слово «отмени» отменяет любое действие бота</td></tr></tbody></table></div>
+<p>Ещё несколько находок: утром в 8:00 <strong>бот сам присылает план,</strong> звонки и короткие сообщения собраны в один блок, срочное отмечено <em>единственным красным цветом,</em> а на сто дел смотреть страшно, <mark>на шесть часов нет.</mark></p>
+<p>Вот как выглядит мой главный экран: только сегодняшний день и полоса загрузки часов.</p>
+<figure class="phone"><a href="/img/app-today-780.webp" target="_blank"><img src="/img/app-today-480.webp" srcset="/img/app-today-480.webp 480w, /img/app-today-780.webp 780w" sizes="300px" width="780" height="1688" alt="Главный экран: сегодняшние дела и загрузка дня, чтобы не набирать больше шести часов" loading="lazy" decoding="async"></a><figcaption>Главный экран: сегодняшние дела и загрузка дня, чтобы не набирать больше шести часов</figcaption></figure>
+<h2>Что понадобится</h2>
+<div class="tbl"><table><thead><tr><th>Что</th><th>Зачем</th><th>Стоимость</th></tr></thead><tbody><tr><td>Компьютер с приложением Claude, вкладка Code</td><td>там Claude пишет и запускает код</td><td>подписка Pro, около 20 $ в месяц</td></tr><tr><td>Бесплатный ChatGPT</td><td>мозговой штурм до Claude</td><td>0</td></tr><tr><td>Telegram</td><td>в нём живёт бот</td><td>0</td></tr><tr><td>Ключ ИИ для бота</td><td>бот понимает фразы и голос</td><td>я пополнила на 5 $, хватает надолго</td></tr><tr><td>Сервер и домен (позже)</td><td>чтобы бот работал при выключенном компьютере</td><td>у меня 544 ₽ в месяц и 124 ₽ в год</td></tr></tbody></table></div>
+<p>Время: у меня два дня, <strong>около 10 часов чистой работы.</strong> Удобно разбить на вечера: шаги 1–4, потом шаг 5, потом 6–7. Сервер можно сделать, <em>когда планер уже понравится.</em></p>
+<h2>Шаг 1. Установите Claude Code</h2>
+<p>Скачайте приложение Claude для компьютера, войдите, переключитесь на вкладку <strong>Code</strong> и выберите пустую папку, например «planer». Включите режим <strong>Авто:</strong> Claude сам создаёт файлы и запускает программу, а рискованное всё равно спросит. <em>Оплату, пароли и ключи вы всегда вводите сами.</em></p>
+<figure><a href="/img/s-claude-download-1400.webp" target="_blank"><img src="/img/s-claude-download-480.webp" srcset="/img/s-claude-download-480.webp 480w, /img/s-claude-download-960.webp 960w, /img/s-claude-download-1400.webp 1400w" sizes="(max-width:720px) 100vw, 688px" width="1400" height="900" alt="Скачать приложение можно на странице claude.com/download" loading="lazy" decoding="async"></a><figcaption>Скачать приложение можно на странице claude.com/download</figcaption></figure>
+<figure><a href="/img/rl-claude-window-1040.webp" target="_blank"><img src="/img/rl-claude-window-480.webp" srcset="/img/rl-claude-window-480.webp 480w, /img/rl-claude-window-960.webp 960w, /img/rl-claude-window-1040.webp 1040w" sizes="(max-width:720px) 100vw, 688px" width="1040" height="915" alt="Вкладка Code, режим Авто и модель рядом с полем ввода" loading="lazy" decoding="async"></a><figcaption>Вкладка Code, режим Авто и модель рядом с полем ввода</figcaption></figure>
+<h2>Шаг 2. Выпишите боли и мечты</h2>
+<p>20 минут, два списка: что раздражает в планировании и как хочется. Не оценивайте, реально ли это. Помогают вопросы:</p>
+<ul><li>Где сейчас лежат дела и почему вы туда не заходите?</li><li>Что каждую неделю делаете руками и ненавидите?</li><li>Что теряется чаще всего: дела, обещания людям, покупки, идеи?</li><li>Как выглядит идеальное утро, что вы видите на экране?</li></ul>
+<h2>Шаг 3. Мозговой штурм в ChatGPT</h2>
+<p>Обдумывать лучше в <strong>бесплатном ChatGPT,</strong> а в Claude приносить готовое задание: <em>там каждое сообщение тратит лимит подписки.</em></p>
+<pre><code>Мне нужно задание для Claude Code, чтобы сделать личный планер: бот в Telegram,
+который понимает голос и текст, и приложение с теми же данными. Я не программист.
+
+Вот что не устраивает сейчас и как я хочу:
+[ваши заметки из шага 2 как есть]
+
+Задай мне 30 или больше вопросов: как планер должен работать, как выглядеть,
+что хранить, что делать при ошибках, кто имеет доступ, как защитить данные.
+По моим ответам собери одно подробное задание для Claude Code.</code></pre>
+<figure><a href="/img/pl-promt-engineer-1040.webp" target="_blank"><img src="/img/pl-promt-engineer-480.webp" srcset="/img/pl-promt-engineer-480.webp 480w, /img/pl-promt-engineer-960.webp 960w, /img/pl-promt-engineer-1040.webp 1040w" sizes="(max-width:720px) 100vw, 688px" width="1040" height="915" alt="Бесплатный ChatGPT с помощником Prompt Engineer задаёт вопросы и собирает готовое задание" loading="lazy" decoding="async"></a><figcaption>Бесплатный ChatGPT с помощником Prompt Engineer задаёт вопросы и собирает готовое задание</figcaption></figure>
+<h2>Шаг 4. Первое задание в Claude Code</h2>
+<p>Для первого задания, интервью и плана включите самую сильную модель (Opus): здесь решается логика, и ошибка стоит дороже всего. Для кода и правок переключитесь на Sonnet, она быстрее и экономнее.</p>
+<p>Если в задании от ChatGPT нет правил безопасности, добавьте их. Это главное, что я поняла по ходу работы:</p>
+<pre><code>Правила, которые закладываем сразу:
+- решения принимает код, ИИ только понимает мои слова: добавить, перенести,
+  отметить сделанным, спросить;
+- всё, что можно посчитать точно (часы, даты, сроки), считает обычный код;
+- бот не пишет «записал», если код этого не сделал;
+- ничего не пропадает навсегда: удалённое лежит в корзине, любое действие
+  отменяется словом «отмени»;
+- боту может писать только мой аккаунт, ключи хранятся в отдельном файле.
+
+Сначала проведи со мной интервью блоками, потом покажи таблицу решений
+и экраны по одному. Код пиши только после моего слова «реализовывай».</code></pre>
+<figure><a href="/img/pl-claude-prompt-1040.webp" target="_blank"><img src="/img/pl-claude-prompt-480.webp" srcset="/img/pl-claude-prompt-480.webp 480w, /img/pl-claude-prompt-960.webp 960w, /img/pl-claude-prompt-1040.webp 1040w" sizes="(max-width:720px) 100vw, 688px" width="1040" height="915" alt="Первое задание вставляется в Claude Code, на этом этапе включена сильная модель" loading="lazy" decoding="async"></a><figcaption>Первое задание вставляется в Claude Code, на этом этапе включена сильная модель</figcaption></figure>
+<h2>Шаг 5. Интервью, экраны, прототип</h2>
+<ol><li>Claude задаёт вопросы блоками. Отвечайте голосом или по номерам. Кажется, что что-то упущено: «Остановись, мы не учли вот что».</li><li>Прочитайте итоговую таблицу, особенно список «что я не учла». Там самое полезное.</li><li>Главный экран: попросите 2–3 варианта и доведите один до конца. Показывайте скринами, что нравится: «1 оставить, во 2 поменять вот это».</li><li>Остальные экраны по одному.</li><li>Кликабельный прототип: откройте на телефоне и пройдите свой обычный день.</li><li>Проверьте описание и только потом пишите «реализовывай».</li></ol>
+<figure><a href="/img/pl-prototype-1040.webp" target="_blank"><img src="/img/pl-prototype-480.webp" srcset="/img/pl-prototype-480.webp 480w, /img/pl-prototype-960.webp 960w, /img/pl-prototype-1040.webp 1040w" sizes="(max-width:720px) 100vw, 688px" width="1040" height="915" alt="Прототип экранов: правка картинки дешевле, чем правка кода" loading="lazy" decoding="async"></a><figcaption>Прототип экранов: правка картинки дешевле, чем правка кода</figcaption></figure>
+<h2>Шаг 6. Бот и ключи</h2>
+<p>Две вещи Claude не может получить за вас:</p>
+<ul><li><strong>Токен бота.</strong> В Telegram откройте @BotFather (с синей галочкой), отправьте <code>/newbot</code>, придумайте имя и username, который заканчивается на <code>bot</code>. Токен это пароль бота, никому его не показывайте.</li><li><strong>Ключ ИИ.</strong> Попросите: «Напиши по шагам, где получить ключ для бота. В чат я его вставлять не буду: скажи, в какой файл положить».</li></ul>
+<p>Так бот отвечает на голосовое: разбирает его на дела, уточняет время и собирает план дня.</p>
+<figure><a href="/img/pl-bot-chat-1040.webp" target="_blank"><img src="/img/pl-bot-chat-480.webp" srcset="/img/pl-bot-chat-480.webp 480w, /img/pl-bot-chat-960.webp 960w, /img/pl-bot-chat-1040.webp 1040w" sizes="(max-width:720px) 100vw, 688px" width="1040" height="915" alt="Бот в Telegram разбирает голосовое сообщение и собирает план на день" loading="lazy" decoding="async"></a><figcaption>Бот в Telegram разбирает голосовое сообщение и собирает план на день</figcaption></figure>
+<h2>Шаг 7. Правки: планер становится вашим</h2>
+<p><mark>Самые полезные правила появляются в первые дни использования, а не в интервью.</mark> Пользуйтесь, записывайте неудобства в одну заметку за день и <strong>отправляйте пачкой,</strong> по разделам и со скриншотами. В конце добавляйте «Всё ли понятно? Задай вопросы». Если бот понял что-то не так:</p>
+<pre><code>Изучи, что я писала боту за последний день и что он ответил.
+Найди, где он меня не понял, объясни причину простыми словами и поправь.</code></pre>
+<p>Если Sonnet дважды не починил одно и то же, включите Opus на одну задачу и вернитесь обратно.</p>
+<figure><a href="/img/pl-cycle-1040.webp" target="_blank"><img src="/img/pl-cycle-480.webp" srcset="/img/pl-cycle-480.webp 480w, /img/pl-cycle-960.webp 960w, /img/pl-cycle-1040.webp 1040w" sizes="(max-width:720px) 100vw, 688px" width="1040" height="915" alt="Цикл улучшения: записываете неудобство, отправляете пачкой, Claude правит, через неделю разбор" loading="lazy" decoding="async"></a><figcaption>Цикл улучшения: записываете неудобство, отправляете пачкой, Claude правит, через неделю разбор</figcaption></figure>
+<h2>Шаг 8. Сервер</h2>
+<p>Пока бот работает на ноутбуке, он <strong>отвечает только при включённом компьютере:</strong> закрыли на ночь, и утренний план не придёт. <em>Сервер</em> это арендованный компьютер в дата-центре, который не выключается. Мне хватает 2 ГБ памяти. Переносите, когда планером уже пользуетесь хотя бы пару дней: Claude сам расскажет, что заказать, и перенесёт всё.</p>
+<figure><a href="/img/s-adminvps-1400.webp" target="_blank"><img src="/img/s-adminvps-480.webp" srcset="/img/s-adminvps-480.webp 480w, /img/s-adminvps-960.webp 960w, /img/s-adminvps-1400.webp 1400w" sizes="(max-width:720px) 100vw, 688px" width="1400" height="900" alt="Сервер можно выбрать у любого хостинга, у меня это AdminVPS в Нидерландах" loading="lazy" decoding="async"></a><figcaption>Сервер можно выбрать у любого хостинга, у меня это AdminVPS в Нидерландах</figcaption></figure>
+<figure><a href="/img/s-regru-1400.webp" target="_blank"><img src="/img/s-regru-480.webp" srcset="/img/s-regru-480.webp 480w, /img/s-regru-960.webp 960w, /img/s-regru-1400.webp 1400w" sizes="(max-width:720px) 100vw, 688px" width="1400" height="900" alt="Домен регистрируется на отдельном сервисе, у меня это Reg.ru" loading="lazy" decoding="async"></a><figcaption>Домен регистрируется на отдельном сервисе, у меня это Reg.ru</figcaption></figure>
+<h2>Шаг 9. Иконка на телефоне</h2>
+<pre><code>Сделай так, чтобы приложение открывалось в браузере и его можно было
+поставить иконкой на экран телефона. Вход по одноразовому коду от бота,
+чтобы никто, кроме меня, не зашёл.</code></pre>
+<p>Календарь и покупки в готовом приложении:</p>
+<div class="gal"><img src="/img/app-calendar-480.webp" srcset="/img/app-calendar-480.webp 480w, /img/app-calendar-780.webp 780w" sizes="(max-width:560px) 50vw, 230px" width="780" height="1688" alt="" loading="lazy" decoding="async"><img src="/img/app-purchases-480.webp" srcset="/img/app-purchases-480.webp 480w, /img/app-purchases-780.webp 780w" sizes="(max-width:560px) 50vw, 230px" width="780" height="1688" alt="" loading="lazy" decoding="async"></div>
+<h2>Что в итоге</h2>
+<p>Свой планер, который знает ваши правила, понимает голос и не даёт дням переполняться. А главное, вы научитесь ставить задачи ИИ так, чтобы он делал полезные инструменты под любой ваш процесс.</p>
+<blockquote><p>Хотите такого помощника для себя или команды? Напишите мне, разберём, что нужно именно вам.</p></blockquote></article><div class="cta aura p3">
+<p>Хотите так же в своём бизнесе? Напишите, коротко расскажите о задаче, и я скажу, чем могу помочь.</p>
+<a class="btn tg" href="https://t.me/npanova" target="_blank" rel="noopener">Написать в Telegram</a> <a href="/rabota/">Консультации и работа</a>
+</div>
+<section class="contact" id="contact">
+<div class="aura p4 cbox">
+<h2>Связаться лично</h2>
+<div class="cbtn">
+<a href="https://t.me/npanova" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#2AABEE"/><path fill="#fff" d="M5.4 11.8l11.6-4.5c.5-.2 1 .1.8.9l-2 9.3c-.1.6-.5.8-1.1.5l-3-2.2-1.4 1.4c-.2.2-.3.3-.6.3l.2-3.1 5.6-5.1c.2-.2 0-.3-.4-.1l-6.9 4.4-3-.9c-.6-.2-.6-.6.2-.9z"/></svg><span>Telegram<small>@npanova</small></span></a>
+<a href="https://max.ru/u/f9LHodD0cOJeLIM-XhOQ_u_l2H61b1TZ78Pvdx1J6JTV9Ub95zTLypmwY4I" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><defs><linearGradient id="mx" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3fb4ff"/><stop offset=".55" stop-color="#4a4cf5"/><stop offset="1" stop-color="#9b3cf0"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#mx)"/><path fill="#fff" d="M12 5.2a6.6 6.6 0 0 0-6.6 6.7c0 1.4.4 2.7 1 3.7l-.7 2.7 2.7-.7a6.6 6.6 0 1 0 3.6-12.4zm0 10.3a3.6 3.6 0 1 1 0-7.3 3.6 3.6 0 0 1 0 7.3z"/></svg><span>MAX<small>написать</small></span></a>
+</div>
+</div>
+<p class="foot">Настя Гагай, Ростов-на-Дону, 2026</p>
+</section>
+</div>
+
+</body>
+</html>
